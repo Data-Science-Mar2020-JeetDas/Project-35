@@ -1,0 +1,614 @@
+
+#******************* Question - : 2016 :  ********************
+
+
+df2016 = df[df.Period == 2016]
+print("\n\n--------------[ OUTPUT for 2016 ]----------------------\n\n")
+print(df2016[['Location','Period','Dim1','First Tooltip']])
+
+df2016_total = df2016[df2016.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2016 Total ]----------------------\n\n")
+print(df2016_total[['Location','Period','Dim1','First Tooltip']])
+
+df2016_urban = df2016[df2016.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2016 Urban ]----------------------\n\n")
+print(df2016_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2016_rural = df2016[df2016.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2016 Rural ]----------------------\n\n")
+print(df2016_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2016_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2016_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2016_rural['Location']))
+print(i2)
+
+#--------------- plot for 2016 ----------------------
+
+plt.title('Question - : 2016')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2016_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2016_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2016_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2016 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+3                                           Afghanistan    2016  Total   
+4                                           Afghanistan    2016  Urban   
+5                                           Afghanistan    2016  Rural   
+57                                              Albania    2016  Total   
+58                                              Albania    2016  Urban   
+59                                              Albania    2016  Rural   
+111                                             Algeria    2016  Total   
+112                                             Algeria    2016  Urban   
+113                                             Algeria    2016  Rural   
+165                                             Andorra    2016  Total   
+166                                             Andorra    2016  Urban   
+167                                             Andorra    2016  Rural   
+219                                              Angola    2016  Total   
+220                                              Angola    2016  Urban   
+221                                              Angola    2016  Rural   
+271                                 Antigua and Barbuda    2016  Total   
+289                                           Argentina    2016  Urban   
+327                                             Armenia    2016  Total   
+328                                             Armenia    2016  Urban   
+329                                             Armenia    2016  Rural   
+379                                           Australia    2016  Total   
+399                                             Austria    2016  Total   
+400                                             Austria    2016  Urban   
+401                                             Austria    2016  Rural   
+453                                          Azerbaijan    2016  Total   
+454                                          Azerbaijan    2016  Urban   
+455                                          Azerbaijan    2016  Rural   
+505                                             Bahamas    2016  Total   
+523                                             Bahrain    2016  Total   
+543                                          Bangladesh    2016  Total   
+                                                ...     ...    ...   
+8745  United Kingdom of Great Britain and Northern I...    2016  Urban   
+8746  United Kingdom of Great Britain and Northern I...    2016  Rural   
+8798                        United Republic of Tanzania    2016  Total   
+8799                        United Republic of Tanzania    2016  Urban   
+8800                        United Republic of Tanzania    2016  Rural   
+8852                           United States of America    2016  Total   
+8853                           United States of America    2016  Urban   
+8854                           United States of America    2016  Rural   
+8906                                            Uruguay    2016  Total   
+8907                                            Uruguay    2016  Urban   
+8908                                            Uruguay    2016  Rural   
+8960                                         Uzbekistan    2016  Total   
+8961                                         Uzbekistan    2016  Urban   
+8962                                         Uzbekistan    2016  Rural   
+9014                                            Vanuatu    2016  Total   
+9015                                            Vanuatu    2016  Urban   
+9016                                            Vanuatu    2016  Rural   
+9066                 Venezuela (Bolivarian Republic of)    2016  Total   
+9081                                           Viet Nam    2016  Total   
+9082                                           Viet Nam    2016  Urban   
+9083                                           Viet Nam    2016  Rural   
+9135                                              Yemen    2016  Total   
+9136                                              Yemen    2016  Urban   
+9137                                              Yemen    2016  Rural   
+9189                                             Zambia    2016  Total   
+9190                                             Zambia    2016  Urban   
+9191                                             Zambia    2016  Rural   
+9243                                           Zimbabwe    2016  Total   
+9244                                           Zimbabwe    2016  Urban   
+9245                                           Zimbabwe    2016  Rural   
+
+      First Tooltip  
+3             13.45  
+4              0.00  
+5             17.94  
+57             0.00  
+58             0.00  
+59             0.00  
+111            0.79  
+112            0.19  
+113            2.28  
+165            0.00  
+166            0.00  
+167            0.00  
+219           21.23  
+220            2.04  
+221           55.56  
+271            0.26  
+289            1.73  
+327            0.00  
+328            0.00  
+329            0.00  
+379            0.00  
+399            0.00  
+400            0.00  
+401            0.00  
+453            0.16  
+454            0.00  
+455            0.35  
+505            0.22  
+523            0.00  
+543            0.27  
+            ...  
+8745           0.00  
+8746           0.00  
+8798          11.67  
+8799           1.75  
+8800          16.41  
+8852           0.00  
+8853           0.00  
+8854           0.00  
+8906           0.48  
+8907           0.48  
+8908           0.47  
+8960           0.00  
+8961           0.00  
+8962           0.00  
+9014           0.68  
+9015           0.43  
+9016           0.77  
+9066           3.40  
+9081           3.01  
+9082           1.34  
+9083           3.88  
+9135          19.75  
+9136           1.03  
+9137          30.01  
+9189          19.46  
+9190           2.76  
+9191          31.77  
+9243          25.27  
+9244           0.33  
+9245          37.17  
+
+[517 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2016 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+3                                           Afghanistan    2016  Total   
+57                                              Albania    2016  Total   
+111                                             Algeria    2016  Total   
+165                                             Andorra    2016  Total   
+219                                              Angola    2016  Total   
+271                                 Antigua and Barbuda    2016  Total   
+327                                             Armenia    2016  Total   
+379                                           Australia    2016  Total   
+399                                             Austria    2016  Total   
+453                                          Azerbaijan    2016  Total   
+505                                             Bahamas    2016  Total   
+523                                             Bahrain    2016  Total   
+543                                          Bangladesh    2016  Total   
+595                                            Barbados    2016  Total   
+615                                             Belarus    2016  Total   
+669                                             Belgium    2016  Total   
+723                                              Belize    2016  Total   
+777                                               Benin    2016  Total   
+831                                              Bhutan    2016  Total   
+885                    Bolivia (Plurinational State of)    2016  Total   
+939                              Bosnia and Herzegovina    2016  Total   
+993                                            Botswana    2016  Total   
+1047                                             Brazil    2016  Total   
+1110                                           Bulgaria    2016  Total   
+1164                                       Burkina Faso    2016  Total   
+1218                                            Burundi    2016  Total   
+1272                                         Cabo Verde    2016  Total   
+1326                                           Cambodia    2016  Total   
+1380                                           Cameroon    2016  Total   
+1434                                             Canada    2016  Total   
+                                                ...     ...    ...   
+7801                                              Sudan    2016  Total   
+7855                                           Suriname    2016  Total   
+7909                                             Sweden    2016  Total   
+7963                                        Switzerland    2016  Total   
+8015                               Syrian Arab Republic    2016  Total   
+8069                                         Tajikistan    2016  Total   
+8123                                           Thailand    2016  Total   
+8177          The former Yugoslav Republic of Macedonia    2016  Total   
+8231                                        Timor-Leste    2016  Total   
+8279                                               Togo    2016  Total   
+8333                                              Tonga    2016  Total   
+8385                                Trinidad and Tobago    2016  Total   
+8405                                            Tunisia    2016  Total   
+8459                                             Turkey    2016  Total   
+8513                                       Turkmenistan    2016  Total   
+8567                                             Tuvalu    2016  Total   
+8618                                             Uganda    2016  Total   
+8672                                            Ukraine    2016  Total   
+8724                               United Arab Emirates    2016  Total   
+8744  United Kingdom of Great Britain and Northern I...    2016  Total   
+8798                        United Republic of Tanzania    2016  Total   
+8852                           United States of America    2016  Total   
+8906                                            Uruguay    2016  Total   
+8960                                         Uzbekistan    2016  Total   
+9014                                            Vanuatu    2016  Total   
+9066                 Venezuela (Bolivarian Republic of)    2016  Total   
+9081                                           Viet Nam    2016  Total   
+9135                                              Yemen    2016  Total   
+9189                                             Zambia    2016  Total   
+9243                                           Zimbabwe    2016  Total   
+
+      First Tooltip  
+3            13.450  
+57            0.000  
+111           0.790  
+165           0.000  
+219          21.230  
+271           0.260  
+327           0.000  
+379           0.000  
+399           0.000  
+453           0.160  
+505           0.220  
+523           0.000  
+543           0.270  
+595           0.830  
+615           0.000  
+669           0.000  
+723           1.000  
+777          54.080  
+831           0.000  
+885          14.380  
+939           0.000  
+993          11.560  
+1047          1.510  
+1110          0.000  
+1164         48.040  
+1218          2.630  
+1272         21.910  
+1326         34.510  
+1380          7.030  
+1434          0.000  
+            ...  
+7801         24.400  
+7855          3.150  
+7909          0.000  
+7963          0.000  
+8015          0.680  
+8069          0.066  
+8123          0.000  
+8177          0.690  
+8231         20.940  
+8279         48.390  
+8333          0.000  
+8385          0.074  
+8405          0.000  
+8459          0.320  
+8513          0.000  
+8567          7.070  
+8618          6.110  
+8672          0.001  
+8724          0.059  
+8744          0.000  
+8798         11.670  
+8852          0.000  
+8906          0.480  
+8960          0.000  
+9014          0.680  
+9066          3.400  
+9081          3.010  
+9135         19.750  
+9189         19.460  
+9243         25.270  
+
+[187 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2016 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+4                                           Afghanistan    2016  Urban   
+58                                              Albania    2016  Urban   
+112                                             Algeria    2016  Urban   
+166                                             Andorra    2016  Urban   
+220                                              Angola    2016  Urban   
+289                                           Argentina    2016  Urban   
+328                                             Armenia    2016  Urban   
+400                                             Austria    2016  Urban   
+454                                          Azerbaijan    2016  Urban   
+544                                          Bangladesh    2016  Urban   
+616                                             Belarus    2016  Urban   
+670                                             Belgium    2016  Urban   
+724                                              Belize    2016  Urban   
+778                                               Benin    2016  Urban   
+832                                              Bhutan    2016  Urban   
+886                    Bolivia (Plurinational State of)    2016  Urban   
+940                              Bosnia and Herzegovina    2016  Urban   
+994                                            Botswana    2016  Urban   
+1048                                             Brazil    2016  Urban   
+1111                                           Bulgaria    2016  Urban   
+1165                                       Burkina Faso    2016  Urban   
+1219                                            Burundi    2016  Urban   
+1273                                         Cabo Verde    2016  Urban   
+1327                                           Cambodia    2016  Urban   
+1381                                           Cameroon    2016  Urban   
+1435                                             Canada    2016  Urban   
+1486                           Central African Republic    2016  Urban   
+1540                                               Chad    2016  Urban   
+1594                                              Chile    2016  Urban   
+1648                                              China    2016  Urban   
+                                                ...     ...    ...   
+7676                                        South Sudan    2016  Urban   
+7697                                              Spain    2016  Urban   
+7751                                          Sri Lanka    2016  Urban   
+7802                                              Sudan    2016  Urban   
+7856                                           Suriname    2016  Urban   
+7910                                             Sweden    2016  Urban   
+7964                                        Switzerland    2016  Urban   
+8016                               Syrian Arab Republic    2016  Urban   
+8070                                         Tajikistan    2016  Urban   
+8124                                           Thailand    2016  Urban   
+8178          The former Yugoslav Republic of Macedonia    2016  Urban   
+8232                                        Timor-Leste    2016  Urban   
+8280                                               Togo    2016  Urban   
+8334                                              Tonga    2016  Urban   
+8406                                            Tunisia    2016  Urban   
+8460                                             Turkey    2016  Urban   
+8514                                       Turkmenistan    2016  Urban   
+8568                                             Tuvalu    2016  Urban   
+8619                                             Uganda    2016  Urban   
+8673                                            Ukraine    2016  Urban   
+8745  United Kingdom of Great Britain and Northern I...    2016  Urban   
+8799                        United Republic of Tanzania    2016  Urban   
+8853                           United States of America    2016  Urban   
+8907                                            Uruguay    2016  Urban   
+8961                                         Uzbekistan    2016  Urban   
+9015                                            Vanuatu    2016  Urban   
+9082                                           Viet Nam    2016  Urban   
+9136                                              Yemen    2016  Urban   
+9190                                             Zambia    2016  Urban   
+9244                                           Zimbabwe    2016  Urban   
+
+      First Tooltip  
+4             0.000  
+58            0.000  
+112           0.190  
+166           0.000  
+220           2.040  
+289           1.730  
+328           0.000  
+400           0.000  
+454           0.000  
+544           0.068  
+616           0.000  
+670           0.000  
+724           0.780  
+778          29.270  
+832           0.000  
+886           2.790  
+940           0.000  
+994           1.350  
+1048          0.330  
+1111          0.000  
+1165          7.430  
+1219          0.710  
+1273         13.530  
+1327          0.790  
+1381          1.320  
+1435          0.000  
+1486          6.490  
+1540         16.510  
+1594          0.000  
+1648          0.077  
+            ...  
+7676         17.100  
+7697          0.000  
+7751          0.000  
+7802          1.660  
+7856          0.330  
+7910          0.000  
+7964          0.000  
+8016          0.000  
+8070          0.000  
+8124          0.000  
+8178          0.000  
+8232          1.050  
+8280         13.480  
+8334          0.000  
+8406          0.000  
+8460          0.000  
+8514          0.000  
+8568          5.840  
+8619          2.030  
+8673          0.000  
+8745          0.000  
+8799          1.750  
+8853          0.000  
+8907          0.480  
+8961          0.000  
+9015          0.430  
+9082          1.340  
+9136          1.030  
+9190          2.760  
+9244          0.330  
+
+[168 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2016 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+5                                           Afghanistan    2016  Rural   
+59                                              Albania    2016  Rural   
+113                                             Algeria    2016  Rural   
+167                                             Andorra    2016  Rural   
+221                                              Angola    2016  Rural   
+329                                             Armenia    2016  Rural   
+401                                             Austria    2016  Rural   
+455                                          Azerbaijan    2016  Rural   
+545                                          Bangladesh    2016  Rural   
+617                                             Belarus    2016  Rural   
+671                                             Belgium    2016  Rural   
+725                                              Belize    2016  Rural   
+779                                               Benin    2016  Rural   
+833                                              Bhutan    2016  Rural   
+887                    Bolivia (Plurinational State of)    2016  Rural   
+941                              Bosnia and Herzegovina    2016  Rural   
+995                                            Botswana    2016  Rural   
+1049                                             Brazil    2016  Rural   
+1112                                           Bulgaria    2016  Rural   
+1166                                       Burkina Faso    2016  Rural   
+1220                                            Burundi    2016  Rural   
+1274                                         Cabo Verde    2016  Rural   
+1328                                           Cambodia    2016  Rural   
+1382                                           Cameroon    2016  Rural   
+1436                                             Canada    2016  Rural   
+1487                           Central African Republic    2016  Rural   
+1541                                               Chad    2016  Rural   
+1595                                              Chile    2016  Rural   
+1649                                              China    2016  Rural   
+1703                                           Colombia    2016  Rural   
+                                                ...     ...    ...   
+7677                                        South Sudan    2016  Rural   
+7698                                              Spain    2016  Rural   
+7752                                          Sri Lanka    2016  Rural   
+7803                                              Sudan    2016  Rural   
+7857                                           Suriname    2016  Rural   
+7911                                             Sweden    2016  Rural   
+7965                                        Switzerland    2016  Rural   
+8017                               Syrian Arab Republic    2016  Rural   
+8071                                         Tajikistan    2016  Rural   
+8125                                           Thailand    2016  Rural   
+8179          The former Yugoslav Republic of Macedonia    2016  Rural   
+8233                                        Timor-Leste    2016  Rural   
+8281                                               Togo    2016  Rural   
+8335                                              Tonga    2016  Rural   
+8407                                            Tunisia    2016  Rural   
+8461                                             Turkey    2016  Rural   
+8515                                       Turkmenistan    2016  Rural   
+8569                                             Tuvalu    2016  Rural   
+8620                                             Uganda    2016  Rural   
+8674                                            Ukraine    2016  Rural   
+8746  United Kingdom of Great Britain and Northern I...    2016  Rural   
+8800                        United Republic of Tanzania    2016  Rural   
+8854                           United States of America    2016  Rural   
+8908                                            Uruguay    2016  Rural   
+8962                                         Uzbekistan    2016  Rural   
+9016                                            Vanuatu    2016  Rural   
+9083                                           Viet Nam    2016  Rural   
+9137                                              Yemen    2016  Rural   
+9191                                             Zambia    2016  Rural   
+9245                                           Zimbabwe    2016  Rural   
+
+      First Tooltip  
+5            17.940  
+59            0.000  
+113           2.280  
+167           0.000  
+221          55.560  
+329           0.000  
+401           0.000  
+455           0.350  
+545           0.380  
+617           0.000  
+671           0.000  
+725           1.180  
+779          75.410  
+833           0.000  
+887          39.870  
+941           0.000  
+995          33.180  
+1049          8.800  
+1112          0.000  
+1166         63.940  
+1220          2.910  
+1274         37.330  
+1328         44.350  
+1382         14.060  
+1436          0.000  
+1487         35.560  
+1541         82.170  
+1595          0.000  
+1649          0.680  
+1703         13.480  
+            ...  
+7677         75.390  
+7698          0.000  
+7752          0.910  
+7803         36.180  
+7857          8.620  
+7911          0.000  
+7965          0.000  
+8017          1.430  
+8071          0.090  
+8125          0.000  
+8179          1.620  
+8233         29.400  
+8281         72.290  
+8335          0.000  
+8407          0.000  
+8461          1.250  
+8515          0.000  
+8569          8.960  
+8620          7.310  
+8674          0.004  
+8746          0.000  
+8800         16.410  
+8854          0.000  
+8908          0.470  
+8962          0.000  
+9016          0.770  
+9083          3.880  
+9137         30.010  
+9191         31.770  
+9245         37.170  
+
+[162 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182 183 184 185 186]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161]
