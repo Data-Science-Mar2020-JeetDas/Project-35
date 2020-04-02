@@ -1,0 +1,616 @@
+
+#******************* Question - : 2012 :  ********************
+
+
+df2012 = df[df.Period == 2012]
+print("\n\n--------------[ OUTPUT for 2012 ]----------------------\n\n")
+print(df2012[['Location','Period','Dim1','First Tooltip']])
+
+df2012_total = df2012[df2012.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2012 Total ]----------------------\n\n")
+print(df2012_total[['Location','Period','Dim1','First Tooltip']])
+
+df2012_urban = df2012[df2012.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2012 Urban ]----------------------\n\n")
+print(df2012_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2012_rural = df2012[df2012.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2012 Rural ]----------------------\n\n")
+print(df2012_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2012_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2012_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2012_rural['Location']))
+print(i2)
+
+#--------------- plot for 2012 ----------------------
+
+plt.title('Question - : 2012')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2012_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2012_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2012_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+
+--------------[ OUTPUT for 2012 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+15                                          Afghanistan    2012  Total   
+16                                          Afghanistan    2012  Urban   
+17                                          Afghanistan    2012  Rural   
+69                                              Albania    2012  Total   
+70                                              Albania    2012  Urban   
+71                                              Albania    2012  Rural   
+123                                             Algeria    2012  Total   
+124                                             Algeria    2012  Urban   
+125                                             Algeria    2012  Rural   
+177                                             Andorra    2012  Total   
+178                                             Andorra    2012  Urban   
+179                                             Andorra    2012  Rural   
+231                                              Angola    2012  Total   
+232                                              Angola    2012  Urban   
+233                                              Angola    2012  Rural   
+275                                 Antigua and Barbuda    2012  Total   
+297                                           Argentina    2012  Total   
+298                                           Argentina    2012  Urban   
+299                                           Argentina    2012  Rural   
+339                                             Armenia    2012  Total   
+340                                             Armenia    2012  Urban   
+341                                             Armenia    2012  Rural   
+383                                           Australia    2012  Total   
+411                                             Austria    2012  Total   
+412                                             Austria    2012  Urban   
+413                                             Austria    2012  Rural   
+465                                          Azerbaijan    2012  Total   
+466                                          Azerbaijan    2012  Urban   
+467                                          Azerbaijan    2012  Rural   
+509                                             Bahamas    2012  Total   
+                                                ...     ...    ...   
+8757  United Kingdom of Great Britain and Northern I...    2012  Urban   
+8758  United Kingdom of Great Britain and Northern I...    2012  Rural   
+8810                        United Republic of Tanzania    2012  Total   
+8811                        United Republic of Tanzania    2012  Urban   
+8812                        United Republic of Tanzania    2012  Rural   
+8864                           United States of America    2012  Total   
+8865                           United States of America    2012  Urban   
+8866                           United States of America    2012  Rural   
+8918                                            Uruguay    2012  Total   
+8919                                            Uruguay    2012  Urban   
+8920                                            Uruguay    2012  Rural   
+8972                                         Uzbekistan    2012  Total   
+8973                                         Uzbekistan    2012  Urban   
+8974                                         Uzbekistan    2012  Rural   
+9026                                            Vanuatu    2012  Total   
+9027                                            Vanuatu    2012  Urban   
+9028                                            Vanuatu    2012  Rural   
+9070                 Venezuela (Bolivarian Republic of)    2012  Total   
+9093                                           Viet Nam    2012  Total   
+9094                                           Viet Nam    2012  Urban   
+9095                                           Viet Nam    2012  Rural   
+9147                                              Yemen    2012  Total   
+9148                                              Yemen    2012  Urban   
+9149                                              Yemen    2012  Rural   
+9201                                             Zambia    2012  Total   
+9202                                             Zambia    2012  Urban   
+9203                                             Zambia    2012  Rural   
+9255                                           Zimbabwe    2012  Total   
+9256                                           Zimbabwe    2012  Urban   
+9257                                           Zimbabwe    2012  Rural   
+
+      First Tooltip  
+15           16.710  
+16            1.600  
+17           21.520  
+69            0.240  
+70            0.000  
+71            0.520  
+123           1.690  
+124           0.300  
+125           4.780  
+177           0.000  
+178           0.000  
+179           0.000  
+231          26.460  
+232           6.310  
+233          58.350  
+275           0.350  
+297           2.020  
+298           1.470  
+299           7.690  
+339           0.013  
+340           0.020  
+341           0.000  
+383           0.000  
+411           0.000  
+412           0.000  
+413           0.000  
+465           0.260  
+466           0.190  
+467           0.340  
+509           0.410  
+            ...  
+8757          0.000  
+8758          0.000  
+8810         11.320  
+8811          1.940  
+8812         15.240  
+8864          0.000  
+8865          0.000  
+8866          0.000  
+8918          0.810  
+8919          0.750  
+8920          1.950  
+8972          0.049  
+8973          0.000  
+8974          0.100  
+9026          1.210  
+9027          0.370  
+9028          1.480  
+9070          4.920  
+9093          6.430  
+9094          2.280  
+9095          8.360  
+9147         22.090  
+9148          1.840  
+9149         32.040  
+9201         20.710  
+9202          2.780  
+9203         32.840  
+9255         26.530  
+9256          1.230  
+9257         38.900  
+
+[524 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2012 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+15                                          Afghanistan    2012  Total   
+69                                              Albania    2012  Total   
+123                                             Algeria    2012  Total   
+177                                             Andorra    2012  Total   
+231                                              Angola    2012  Total   
+275                                 Antigua and Barbuda    2012  Total   
+297                                           Argentina    2012  Total   
+339                                             Armenia    2012  Total   
+383                                           Australia    2012  Total   
+411                                             Austria    2012  Total   
+465                                          Azerbaijan    2012  Total   
+509                                             Bahamas    2012  Total   
+527                                             Bahrain    2012  Total   
+555                                          Bangladesh    2012  Total   
+599                                            Barbados    2012  Total   
+627                                             Belarus    2012  Total   
+681                                             Belgium    2012  Total   
+735                                              Belize    2012  Total   
+789                                               Benin    2012  Total   
+843                                              Bhutan    2012  Total   
+897                    Bolivia (Plurinational State of)    2012  Total   
+951                              Bosnia and Herzegovina    2012  Total   
+1005                                           Botswana    2012  Total   
+1059                                             Brazil    2012  Total   
+1101                                  Brunei Darussalam    2012  Total   
+1122                                           Bulgaria    2012  Total   
+1176                                       Burkina Faso    2012  Total   
+1230                                            Burundi    2012  Total   
+1284                                         Cabo Verde    2012  Total   
+1338                                           Cambodia    2012  Total   
+                                                ...     ...    ...   
+7813                                              Sudan    2012  Total   
+7867                                           Suriname    2012  Total   
+7921                                             Sweden    2012  Total   
+7975                                        Switzerland    2012  Total   
+8027                               Syrian Arab Republic    2012  Total   
+8081                                         Tajikistan    2012  Total   
+8135                                           Thailand    2012  Total   
+8189          The former Yugoslav Republic of Macedonia    2012  Total   
+8243                                        Timor-Leste    2012  Total   
+8291                                               Togo    2012  Total   
+8345                                              Tonga    2012  Total   
+8389                                Trinidad and Tobago    2012  Total   
+8417                                            Tunisia    2012  Total   
+8471                                             Turkey    2012  Total   
+8525                                       Turkmenistan    2012  Total   
+8579                                             Tuvalu    2012  Total   
+8630                                             Uganda    2012  Total   
+8684                                            Ukraine    2012  Total   
+8728                               United Arab Emirates    2012  Total   
+8756  United Kingdom of Great Britain and Northern I...    2012  Total   
+8810                        United Republic of Tanzania    2012  Total   
+8864                           United States of America    2012  Total   
+8918                                            Uruguay    2012  Total   
+8972                                         Uzbekistan    2012  Total   
+9026                                            Vanuatu    2012  Total   
+9070                 Venezuela (Bolivarian Republic of)    2012  Total   
+9093                                           Viet Nam    2012  Total   
+9147                                              Yemen    2012  Total   
+9201                                             Zambia    2012  Total   
+9255                                           Zimbabwe    2012  Total   
+
+      First Tooltip  
+15           16.710  
+69            0.240  
+123           1.690  
+177           0.000  
+231          26.460  
+275           0.350  
+297           2.020  
+339           0.013  
+383           0.000  
+411           0.000  
+465           0.260  
+509           0.410  
+527           0.000  
+555           4.290  
+599           0.810  
+627           0.000  
+681           0.000  
+735           1.870  
+789          57.490  
+843           2.390  
+897          18.790  
+951           0.000  
+1005         13.740  
+1059          3.150  
+1101          2.600  
+1122          0.000  
+1176         53.650  
+1230          2.680  
+1284         28.700  
+1338         47.210  
+            ...  
+7813         33.310  
+7867          4.470  
+7921          0.000  
+7975          0.000  
+8027          0.670  
+8081          0.230  
+8135          0.280  
+8189          0.630  
+8243         26.990  
+8291         51.130  
+8345          0.000  
+8389          0.094  
+8417          2.170  
+8471          0.340  
+8525          0.130  
+8579          6.330  
+8630          8.120  
+8684          0.001  
+8728          0.059  
+8756          0.000  
+8810         11.320  
+8864          0.000  
+8918          0.810  
+8972          0.049  
+9026          1.210  
+9070          4.920  
+9093          6.430  
+9147         22.090  
+9201         20.710  
+9255         26.530  
+
+[193 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2012 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+16                                          Afghanistan    2012  Urban   
+70                                              Albania    2012  Urban   
+124                                             Algeria    2012  Urban   
+178                                             Andorra    2012  Urban   
+232                                              Angola    2012  Urban   
+298                                           Argentina    2012  Urban   
+340                                             Armenia    2012  Urban   
+412                                             Austria    2012  Urban   
+466                                          Azerbaijan    2012  Urban   
+556                                          Bangladesh    2012  Urban   
+628                                             Belarus    2012  Urban   
+682                                             Belgium    2012  Urban   
+736                                              Belize    2012  Urban   
+790                                               Benin    2012  Urban   
+844                                              Bhutan    2012  Urban   
+898                    Bolivia (Plurinational State of)    2012  Urban   
+952                              Bosnia and Herzegovina    2012  Urban   
+1006                                           Botswana    2012  Urban   
+1060                                             Brazil    2012  Urban   
+1123                                           Bulgaria    2012  Urban   
+1177                                       Burkina Faso    2012  Urban   
+1231                                            Burundi    2012  Urban   
+1285                                         Cabo Verde    2012  Urban   
+1339                                           Cambodia    2012  Urban   
+1393                                           Cameroon    2012  Urban   
+1447                                             Canada    2012  Urban   
+1498                           Central African Republic    2012  Urban   
+1552                                               Chad    2012  Urban   
+1606                                              Chile    2012  Urban   
+1660                                              China    2012  Urban   
+                                                ...     ...    ...   
+7688                                        South Sudan    2012  Urban   
+7709                                              Spain    2012  Urban   
+7763                                          Sri Lanka    2012  Urban   
+7814                                              Sudan    2012  Urban   
+7868                                           Suriname    2012  Urban   
+7922                                             Sweden    2012  Urban   
+7976                                        Switzerland    2012  Urban   
+8028                               Syrian Arab Republic    2012  Urban   
+8082                                         Tajikistan    2012  Urban   
+8136                                           Thailand    2012  Urban   
+8190          The former Yugoslav Republic of Macedonia    2012  Urban   
+8244                                        Timor-Leste    2012  Urban   
+8292                                               Togo    2012  Urban   
+8346                                              Tonga    2012  Urban   
+8418                                            Tunisia    2012  Urban   
+8472                                             Turkey    2012  Urban   
+8526                                       Turkmenistan    2012  Urban   
+8580                                             Tuvalu    2012  Urban   
+8631                                             Uganda    2012  Urban   
+8685                                            Ukraine    2012  Urban   
+8757  United Kingdom of Great Britain and Northern I...    2012  Urban   
+8811                        United Republic of Tanzania    2012  Urban   
+8865                           United States of America    2012  Urban   
+8919                                            Uruguay    2012  Urban   
+8973                                         Uzbekistan    2012  Urban   
+9027                                            Vanuatu    2012  Urban   
+9094                                           Viet Nam    2012  Urban   
+9148                                              Yemen    2012  Urban   
+9202                                             Zambia    2012  Urban   
+9256                                           Zimbabwe    2012  Urban   
+
+      First Tooltip  
+16            1.600  
+70            0.000  
+124           0.300  
+178           0.000  
+232           6.310  
+298           1.470  
+340           0.020  
+412           0.000  
+466           0.190  
+556           1.350  
+628           0.000  
+682           0.000  
+736           0.900  
+790          31.450  
+844           1.030  
+898           5.840  
+952           0.000  
+1006          1.950  
+1060          1.000  
+1123          0.000  
+1177          7.880  
+1231          1.040  
+1285         18.650  
+1339         10.980  
+1393          1.210  
+1447          0.000  
+1498          6.490  
+1552         16.950  
+1606          0.600  
+1660          0.130  
+            ...  
+7688         35.670  
+7709          0.000  
+7763          0.720  
+7814          9.080  
+7868          0.260  
+7922          0.000  
+7976          0.000  
+8028          0.000  
+8082          0.000  
+8136          0.000  
+8190          0.000  
+8244          6.410  
+8292         16.090  
+8346          0.000  
+8418          0.100  
+8472          0.005  
+8526          0.000  
+8580          4.600  
+8631          2.010  
+8685          0.000  
+8757          0.000  
+8811          1.940  
+8865          0.000  
+8919          0.750  
+8973          0.000  
+9027          0.370  
+9094          2.280  
+9148          1.840  
+9202          2.780  
+9256          1.230  
+
+[168 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2012 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+17                                          Afghanistan    2012  Rural   
+71                                              Albania    2012  Rural   
+125                                             Algeria    2012  Rural   
+179                                             Andorra    2012  Rural   
+233                                              Angola    2012  Rural   
+299                                           Argentina    2012  Rural   
+341                                             Armenia    2012  Rural   
+413                                             Austria    2012  Rural   
+467                                          Azerbaijan    2012  Rural   
+557                                          Bangladesh    2012  Rural   
+629                                             Belarus    2012  Rural   
+683                                             Belgium    2012  Rural   
+737                                              Belize    2012  Rural   
+791                                               Benin    2012  Rural   
+845                                              Bhutan    2012  Rural   
+899                    Bolivia (Plurinational State of)    2012  Rural   
+953                              Bosnia and Herzegovina    2012  Rural   
+1007                                           Botswana    2012  Rural   
+1061                                             Brazil    2012  Rural   
+1124                                           Bulgaria    2012  Rural   
+1178                                       Burkina Faso    2012  Rural   
+1232                                            Burundi    2012  Rural   
+1286                                         Cabo Verde    2012  Rural   
+1340                                           Cambodia    2012  Rural   
+1394                                           Cameroon    2012  Rural   
+1448                                             Canada    2012  Rural   
+1499                           Central African Republic    2012  Rural   
+1553                                               Chad    2012  Rural   
+1607                                              Chile    2012  Rural   
+1661                                              China    2012  Rural   
+                                                ...     ...    ...   
+7689                                        South Sudan    2012  Rural   
+7710                                              Spain    2012  Rural   
+7764                                          Sri Lanka    2012  Rural   
+7815                                              Sudan    2012  Rural   
+7869                                           Suriname    2012  Rural   
+7923                                             Sweden    2012  Rural   
+7977                                        Switzerland    2012  Rural   
+8029                               Syrian Arab Republic    2012  Rural   
+8083                                         Tajikistan    2012  Rural   
+8137                                           Thailand    2012  Rural   
+8191          The former Yugoslav Republic of Macedonia    2012  Rural   
+8245                                        Timor-Leste    2012  Rural   
+8293                                               Togo    2012  Rural   
+8347                                              Tonga    2012  Rural   
+8419                                            Tunisia    2012  Rural   
+8473                                             Turkey    2012  Rural   
+8527                                       Turkmenistan    2012  Rural   
+8581                                             Tuvalu    2012  Rural   
+8632                                             Uganda    2012  Rural   
+8686                                            Ukraine    2012  Rural   
+8758  United Kingdom of Great Britain and Northern I...    2012  Rural   
+8812                        United Republic of Tanzania    2012  Rural   
+8866                           United States of America    2012  Rural   
+8920                                            Uruguay    2012  Rural   
+8974                                         Uzbekistan    2012  Rural   
+9028                                            Vanuatu    2012  Rural   
+9095                                           Viet Nam    2012  Rural   
+9149                                              Yemen    2012  Rural   
+9203                                             Zambia    2012  Rural   
+9257                                           Zimbabwe    2012  Rural   
+
+      First Tooltip  
+17           21.520  
+71            0.520  
+125           4.780  
+179           0.000  
+233          58.350  
+299           7.690  
+341           0.000  
+413           0.000  
+467           0.340  
+557           5.670  
+629           0.000  
+683           0.000  
+737           2.670  
+791          78.060  
+845           3.170  
+899          45.460  
+953           0.000  
+1007         35.420  
+1061         15.230  
+1124          0.000  
+1178         69.530  
+1232          2.890  
+1286         45.680  
+1340         56.870  
+1394         13.760  
+1448          0.000  
+1499         35.560  
+1553         82.940  
+1607          1.640  
+1661          1.620  
+            ...  
+7689         77.380  
+7710          0.000  
+7764          1.820  
+7815         45.430  
+7869         12.730  
+7923          0.000  
+7977          0.000  
+8029          1.430  
+8083          0.310  
+8137          0.510  
+8191          1.460  
+8245         35.160  
+8293         73.100  
+8347          0.000  
+8419          6.420  
+8473          1.210  
+8527          0.250  
+8581          8.600  
+8632          9.690  
+8686          0.004  
+8758          0.000  
+8812         15.240  
+8866          0.000  
+8920          1.950  
+8974          0.100  
+9028          1.480  
+9095          8.360  
+9149         32.040  
+9203         32.840  
+9257         38.900  
+
+[163 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182 183 184 185 186 187 188 189 190 191 192]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162]
