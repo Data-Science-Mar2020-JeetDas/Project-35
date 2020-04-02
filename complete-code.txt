@@ -1,0 +1,1069 @@
+# -*- coding: utf-8 -*-
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
+import pandas
+
+
+df = pd.read_csv("C:/Users/Jeet Das/Desktop/Project-35.csv",encoding="utf-8")
+
+print("\n----------------------- output data :---------------------\n")
+print("Project-35 : Population practising open defecation (%)[By WHO]");
+print("\n------------------------------------------------------------\n")
+
+
+# Question – A : get row and column numbers 
+
+print('---------------------------------------------')
+print("Dimension of the data frame = ",df.shape)
+print('---------------------------------------------')
+
+# Question – B : print column names :
+
+print('------------------------\n Column names as follows :')
+print('------------------------\n')
+count = 0
+for col in df.columns: 
+        print(count,"-->",col)
+        count = count+1
+print("\n-----------------------------\n")
+
+# Question - C : print available country
+
+country = df.groupby(['Location'])[['Period']].count()
+print("---------------------------------")
+print("\tAvailable country names : ")
+print("-------------------------------")
+print(country)
+print("-------------------------------")
+count = 0
+for row in range(len(country)): 
+        count = count+1
+print("total no. of country = ",count)        
+print("-----------------------------\n")
+
+
+# Question - D : Available years data for which data is available
+
+years = df.groupby(['Period'])[['Location']].count()
+print("---------------------------------")
+print("\tAvailable years data : ")
+print("-------------------------------")
+print(years)
+print("-------------------------------")
+count = 0
+for row in range(len(years)): 
+        count = count+1
+print("total no. of years = ",count)        
+print("-----------------------------\n")
+
+
+
+# Question - E :Types of available indicators
+
+indicator = df.groupby(['Indicator'])[['Period']].count()
+print("---------------------------------")
+print("\tAvailable types of indicators : ")
+print("-------------------------------")
+print(indicator)
+print("-------------------------------")
+count = 0
+for row in range(len(indicator)): 
+        count = count+1
+print("total no. of indicators = ",count)        
+print("-----------------------------\n")
+
+#******************* Question - : 2000 :  ********************
+
+
+df2000 = df[df.Period == 2000]
+print("\n\n--------------[ OUTPUT for 2000 ]----------------------\n\n")
+print(df2000[['Location','Period','Dim1','First Tooltip']])
+
+df2000_total = df2000[df2000.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2000 Total ]----------------------\n\n")
+print(df2000_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2000_urban = df2000[df2000.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2000 Urban ]----------------------\n\n")
+print(df2000_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2000_rural = df2000[df2000.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2000 Rural ]----------------------\n\n")
+print(df2000_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2000_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2000_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2000_rural['Location']))
+print(i2)
+
+#--------------- plot for 2000 ----------------------
+
+plt.title('Question - : 2000')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2000_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2000_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2000_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+#******************* Question - : 2001 :  ********************
+
+
+df2001 = df[df.Period == 2001]
+print("\n\n--------------[ OUTPUT for 2001 ]----------------------\n\n")
+print(df2001[['Location','Period','Dim1','First Tooltip']])
+
+df2001_total = df2001[df2001.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2001 Total ]----------------------\n\n")
+print(df2001_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2001_urban = df2001[df2001.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2001 Urban ]----------------------\n\n")
+print(df2001_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2001_rural = df2001[df2001.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2001 Rural ]----------------------\n\n")
+print(df2001_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2001_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2001_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2001_rural['Location']))
+print(i2)
+
+#--------------- plot for 2001 ----------------------
+
+plt.title('Question - : 2001')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2001_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2001_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2001_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+#******************* Question - : 2002 :  ********************
+
+
+df2002 = df[df.Period == 2002]
+print("\n\n--------------[ OUTPUT for 2002 ]----------------------\n\n")
+print(df2002[['Location','Period','Dim1','First Tooltip']])
+
+df2002_total = df2002[df2002.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2002 Total ]----------------------\n\n")
+print(df2002_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2002_urban = df2002[df2002.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2002 Urban ]----------------------\n\n")
+print(df2002_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2002_rural = df2002[df2002.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2002 Rural ]----------------------\n\n")
+print(df2002_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2002_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2002_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2002_rural['Location']))
+print(i2)
+
+#--------------- plot for 2002 ----------------------
+
+plt.title('Question - : 2002')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2002_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2002_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2002_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2003 :  ********************
+
+
+df2003 = df[df.Period == 2003]
+print("\n\n--------------[ OUTPUT for 2003 ]----------------------\n\n")
+print(df2003[['Location','Period','Dim1','First Tooltip']])
+
+df2003_total = df2003[df2003.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2003 Total ]----------------------\n\n")
+print(df2003_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2003_urban = df2003[df2003.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2003 Urban ]----------------------\n\n")
+print(df2003_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2003_rural = df2003[df2003.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2003 Rural ]----------------------\n\n")
+print(df2003_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2003_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2003_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2003_rural['Location']))
+print(i2)
+
+#--------------- plot for 2003 ----------------------
+
+plt.title('Question - : 2003')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2003_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2003_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2003_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2004 :  ********************
+
+
+df2004 = df[df.Period == 2004]
+print("\n\n--------------[ OUTPUT for 2004 ]----------------------\n\n")
+print(df2004[['Location','Period','Dim1','First Tooltip']])
+
+df2004_total = df2004[df2004.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2004 Total ]----------------------\n\n")
+print(df2004_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2004_urban = df2004[df2004.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2004 Urban ]----------------------\n\n")
+print(df2004_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2004_rural = df2004[df2004.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2004 Rural ]----------------------\n\n")
+print(df2004_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2004_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2004_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2004_rural['Location']))
+print(i2)
+
+#--------------- plot for 2004 ----------------------
+
+plt.title('Question - : 2004')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2004_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2004_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2004_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2005 :  ********************
+
+
+df2005 = df[df.Period == 2005]
+print("\n\n--------------[ OUTPUT for 2005 ]----------------------\n\n")
+print(df2005[['Location','Period','Dim1','First Tooltip']])
+
+df2005_total = df2005[df2005.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2005 Total ]----------------------\n\n")
+print(df2005_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2005_urban = df2005[df2005.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2005 Urban ]----------------------\n\n")
+print(df2005_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2005_rural = df2005[df2005.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2005 Rural ]----------------------\n\n")
+print(df2005_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2005_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2005_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2005_rural['Location']))
+print(i2)
+
+#--------------- plot for 2005 ----------------------
+
+plt.title('Question - : 2005')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2005_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2005_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2005_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2006 :  ********************
+
+
+df2006 = df[df.Period == 2006]
+print("\n\n--------------[ OUTPUT for 2006 ]----------------------\n\n")
+print(df2006[['Location','Period','Dim1','First Tooltip']])
+
+df2006_total = df2006[df2006.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2006 Total ]----------------------\n\n")
+print(df2006_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2006_urban = df2006[df2006.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2006 Urban ]----------------------\n\n")
+print(df2006_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2006_rural = df2006[df2006.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2006 Rural ]----------------------\n\n")
+print(df2006_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2006_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2006_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2006_rural['Location']))
+print(i2)
+
+#--------------- plot for 2006 ----------------------
+
+plt.title('Question - : 2006')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2006_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2006_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2006_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2007 :  ********************
+
+
+df2007 = df[df.Period == 2007]
+print("\n\n--------------[ OUTPUT for 2007 ]----------------------\n\n")
+print(df2007[['Location','Period','Dim1','First Tooltip']])
+
+df2007_total = df2007[df2007.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2007 Total ]----------------------\n\n")
+print(df2007_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2007_urban = df2007[df2007.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2007 Urban ]----------------------\n\n")
+print(df2007_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2007_rural = df2007[df2007.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2007 Rural ]----------------------\n\n")
+print(df2007_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2007_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2007_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2007_rural['Location']))
+print(i2)
+
+#--------------- plot for 2007 ----------------------
+
+plt.title('Question - : 2007')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2007_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2007_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2007_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2008 :  ********************
+
+
+df2008 = df[df.Period == 2008]
+print("\n\n--------------[ OUTPUT for 2008 ]----------------------\n\n")
+print(df2008[['Location','Period','Dim1','First Tooltip']])
+
+df2008_total = df2008[df2008.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2008 Total ]----------------------\n\n")
+print(df2008_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2008_urban = df2008[df2008.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2008 Urban ]----------------------\n\n")
+print(df2008_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2008_rural = df2008[df2008.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2008 Rural ]----------------------\n\n")
+print(df2008_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2008_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2008_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2008_rural['Location']))
+print(i2)
+
+#--------------- plot for 2008 ----------------------
+
+plt.title('Question - : 2008')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2008_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2008_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2008_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2009 :  ********************
+
+
+df2009 = df[df.Period == 2009]
+print("\n\n--------------[ OUTPUT for 2009 ]----------------------\n\n")
+print(df2009[['Location','Period','Dim1','First Tooltip']])
+
+df2009_total = df2009[df2009.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2009 Total ]----------------------\n\n")
+print(df2009_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2009_urban = df2009[df2009.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2009 Urban ]----------------------\n\n")
+print(df2009_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2009_rural = df2009[df2009.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2009 Rural ]----------------------\n\n")
+print(df2009_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2009_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2009_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2009_rural['Location']))
+print(i2)
+
+#--------------- plot for 2009 ----------------------
+
+plt.title('Question - : 2009')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2009_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2009_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2009_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2010 :  ********************
+
+
+df2010 = df[df.Period == 2010]
+print("\n\n--------------[ OUTPUT for 2010 ]----------------------\n\n")
+print(df2010[['Location','Period','Dim1','First Tooltip']])
+
+df2010_total = df2010[df2010.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2010 Total ]----------------------\n\n")
+print(df2010_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2010_urban = df2010[df2010.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2010 Urban ]----------------------\n\n")
+print(df2010_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2010_rural = df2010[df2010.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2010 Rural ]----------------------\n\n")
+print(df2010_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2010_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2010_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2010_rural['Location']))
+print(i2)
+
+#--------------- plot for 2010 ----------------------
+
+plt.title('Question - : 2010')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2010_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2010_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2010_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2011 :  ********************
+
+
+df2011 = df[df.Period == 2011]
+print("\n\n--------------[ OUTPUT for 2011 ]----------------------\n\n")
+print(df2011[['Location','Period','Dim1','First Tooltip']])
+
+df2011_total = df2011[df2011.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2011 Total ]----------------------\n\n")
+print(df2011_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2011_urban = df2011[df2011.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2011 Urban ]----------------------\n\n")
+print(df2011_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2011_rural = df2011[df2011.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2011 Rural ]----------------------\n\n")
+print(df2011_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2011_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2011_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2011_rural['Location']))
+print(i2)
+
+#--------------- plot for 2011 ----------------------
+
+plt.title('Question - : 2011')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2011_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2011_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2011_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2012 :  ********************
+
+
+df2012 = df[df.Period == 2012]
+print("\n\n--------------[ OUTPUT for 2012 ]----------------------\n\n")
+print(df2012[['Location','Period','Dim1','First Tooltip']])
+
+df2012_total = df2012[df2012.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2012 Total ]----------------------\n\n")
+print(df2012_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2012_urban = df2012[df2012.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2012 Urban ]----------------------\n\n")
+print(df2012_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2012_rural = df2012[df2012.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2012 Rural ]----------------------\n\n")
+print(df2012_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2012_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2012_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2012_rural['Location']))
+print(i2)
+
+#--------------- plot for 2012 ----------------------
+
+plt.title('Question - : 2012')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2012_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2012_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2012_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2013 :  ********************
+
+
+df2013 = df[df.Period == 2013]
+print("\n\n--------------[ OUTPUT for 2013 ]----------------------\n\n")
+print(df2013[['Location','Period','Dim1','First Tooltip']])
+
+df2013_total = df2013[df2013.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2013 Total ]----------------------\n\n")
+print(df2013_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2013_urban = df2013[df2013.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2013 Urban ]----------------------\n\n")
+print(df2013_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2013_rural = df2013[df2013.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2013 Rural ]----------------------\n\n")
+print(df2013_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2013_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2013_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2013_rural['Location']))
+print(i2)
+
+#--------------- plot for 2013 ----------------------
+
+plt.title('Question - : 2013')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2013_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2013_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2013_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2014 :  ********************
+
+
+df2014 = df[df.Period == 2014]
+print("\n\n--------------[ OUTPUT for 2014 ]----------------------\n\n")
+print(df2014[['Location','Period','Dim1','First Tooltip']])
+
+df2014_total = df2014[df2014.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2014 Total ]----------------------\n\n")
+print(df2014_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2014_urban = df2014[df2014.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2014 Urban ]----------------------\n\n")
+print(df2014_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2014_rural = df2014[df2014.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2014 Rural ]----------------------\n\n")
+print(df2014_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2014_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2014_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2014_rural['Location']))
+print(i2)
+
+#--------------- plot for 2014 ----------------------
+
+plt.title('Question - : 2014')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2014_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2014_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2014_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2015 :  ********************
+
+
+df2015 = df[df.Period == 2015]
+print("\n\n--------------[ OUTPUT for 2015 ]----------------------\n\n")
+print(df2015[['Location','Period','Dim1','First Tooltip']])
+
+df2015_total = df2015[df2015.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2015 Total ]----------------------\n\n")
+print(df2015_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2015_urban = df2015[df2015.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2015 Urban ]----------------------\n\n")
+print(df2015_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2015_rural = df2015[df2015.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2015 Rural ]----------------------\n\n")
+print(df2015_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2015_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2015_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2015_rural['Location']))
+print(i2)
+
+#--------------- plot for 2015 ----------------------
+
+plt.title('Question - : 2015')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2015_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2015_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2015_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2016 :  ********************
+
+
+df2016 = df[df.Period == 2016]
+print("\n\n--------------[ OUTPUT for 2016 ]----------------------\n\n")
+print(df2016[['Location','Period','Dim1','First Tooltip']])
+
+df2016_total = df2016[df2016.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2016 Total ]----------------------\n\n")
+print(df2016_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2016_urban = df2016[df2016.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2016 Urban ]----------------------\n\n")
+print(df2016_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2016_rural = df2016[df2016.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2016 Rural ]----------------------\n\n")
+print(df2016_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2016_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2016_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2016_rural['Location']))
+print(i2)
+
+#--------------- plot for 2016 ----------------------
+
+plt.title('Question - : 2016')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2016_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2016_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2016_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+#******************* Question - : 2017 :  ********************
+
+
+df2017 = df[df.Period == 2017]
+print("\n\n--------------[ OUTPUT for 2017 ]----------------------\n\n")
+print(df2017[['Location','Period','Dim1','First Tooltip']])
+
+df2017_total = df2017[df2017.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2017 Total ]----------------------\n\n")
+print(df2017_total[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2017_urban = df2017[df2017.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2017 Urban ]----------------------\n\n")
+print(df2017_urban[['Location','Period','Dim1','First Tooltip']])
+                                                         
+df2017_rural = df2017[df2017.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2017 Rural ]----------------------\n\n")
+print(df2017_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2017_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2017_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2017_rural['Location']))
+print(i2)
+
+#--------------- plot for 2017 ----------------------
+
+plt.title('Question - : 2017')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+    
+plt.plot(i,df2017_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2017_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2017_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
