@@ -1,0 +1,614 @@
+
+#******************* Question - : 2006 :  ********************
+
+
+df2006 = df[df.Period == 2006]
+print("\n\n--------------[ OUTPUT for 2006 ]----------------------\n\n")
+print(df2006[['Location','Period','Dim1','First Tooltip']])
+
+df2006_total = df2006[df2006.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2006 Total ]----------------------\n\n")
+print(df2006_total[['Location','Period','Dim1','First Tooltip']])
+
+df2006_urban = df2006[df2006.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2006 Urban ]----------------------\n\n")
+print(df2006_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2006_rural = df2006[df2006.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2006 Rural ]----------------------\n\n")
+print(df2006_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2006_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2006_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2006_rural['Location']))
+print(i2)
+
+#--------------- plot for 2006 ----------------------
+
+plt.title('Question - : 2006')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2006_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2006_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2006_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2006 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+33                                          Afghanistan    2006  Total   
+34                                          Afghanistan    2006  Urban   
+35                                          Afghanistan    2006  Rural   
+87                                              Albania    2006  Total   
+88                                              Albania    2006  Urban   
+89                                              Albania    2006  Rural   
+141                                             Algeria    2006  Total   
+142                                             Algeria    2006  Urban   
+143                                             Algeria    2006  Rural   
+195                                             Andorra    2006  Total   
+196                                             Andorra    2006  Urban   
+197                                             Andorra    2006  Rural   
+249                                              Angola    2006  Total   
+250                                              Angola    2006  Urban   
+251                                              Angola    2006  Rural   
+281                                 Antigua and Barbuda    2006  Total   
+315                                           Argentina    2006  Total   
+316                                           Argentina    2006  Urban   
+317                                           Argentina    2006  Rural   
+357                                             Armenia    2006  Total   
+358                                             Armenia    2006  Urban   
+359                                             Armenia    2006  Rural   
+389                                           Australia    2006  Total   
+429                                             Austria    2006  Total   
+430                                             Austria    2006  Urban   
+431                                             Austria    2006  Rural   
+483                                          Azerbaijan    2006  Total   
+484                                          Azerbaijan    2006  Urban   
+485                                          Azerbaijan    2006  Rural   
+515                                             Bahamas    2006  Total   
+                                                ...     ...    ...   
+8775  United Kingdom of Great Britain and Northern I...    2006  Urban   
+8776  United Kingdom of Great Britain and Northern I...    2006  Rural   
+8828                        United Republic of Tanzania    2006  Total   
+8829                        United Republic of Tanzania    2006  Urban   
+8830                        United Republic of Tanzania    2006  Rural   
+8882                           United States of America    2006  Total   
+8883                           United States of America    2006  Urban   
+8884                           United States of America    2006  Rural   
+8936                                            Uruguay    2006  Total   
+8937                                            Uruguay    2006  Urban   
+8938                                            Uruguay    2006  Rural   
+8990                                         Uzbekistan    2006  Total   
+8991                                         Uzbekistan    2006  Urban   
+8992                                         Uzbekistan    2006  Rural   
+9044                                            Vanuatu    2006  Total   
+9045                                            Vanuatu    2006  Urban   
+9046                                            Vanuatu    2006  Rural   
+9076                 Venezuela (Bolivarian Republic of)    2006  Total   
+9111                                           Viet Nam    2006  Total   
+9112                                           Viet Nam    2006  Urban   
+9113                                           Viet Nam    2006  Rural   
+9165                                              Yemen    2006  Total   
+9166                                              Yemen    2006  Urban   
+9167                                              Yemen    2006  Rural   
+9219                                             Zambia    2006  Total   
+9220                                             Zambia    2006  Urban   
+9221                                             Zambia    2006  Rural   
+9273                                           Zimbabwe    2006  Total   
+9274                                           Zimbabwe    2006  Urban   
+9275                                           Zimbabwe    2006  Rural   
+
+      First Tooltip  
+33           21.790  
+34            4.620  
+35           26.890  
+87            0.570  
+88            0.290  
+89            0.840  
+141           3.810  
+142           0.520  
+143           9.800  
+195           0.000  
+196           0.000  
+197           0.000  
+249          34.250  
+250          12.700  
+251          62.530  
+281           0.850  
+315           1.560  
+316           0.900  
+317           7.690  
+357           0.045  
+358           0.071  
+359           0.000  
+389           0.000  
+429           0.000  
+430           0.000  
+431           0.000  
+483           0.200  
+484           0.140  
+485           0.270  
+515           0.770  
+            ...  
+8775          0.000  
+8776          0.000  
+8828         10.610  
+8829          2.220  
+8830         13.480  
+8882          0.000  
+8883          0.000  
+8884          0.000  
+8936          1.340  
+8937          1.150  
+8938          4.170  
+8990          0.051  
+8991          0.000  
+8992          0.100  
+9044          2.030  
+9045          0.290  
+9046          2.560  
+9076          7.110  
+9111         11.910  
+9112          3.690  
+9113         15.090  
+9165         26.470  
+9166          3.450  
+9167         36.100  
+9219         22.620  
+9220          2.820  
+9221         34.450  
+9273         28.290  
+9274          2.560  
+9275         41.490  
+
+[522 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2006 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+33                                          Afghanistan    2006  Total   
+87                                              Albania    2006  Total   
+141                                             Algeria    2006  Total   
+195                                             Andorra    2006  Total   
+249                                              Angola    2006  Total   
+281                                 Antigua and Barbuda    2006  Total   
+315                                           Argentina    2006  Total   
+357                                             Armenia    2006  Total   
+389                                           Australia    2006  Total   
+429                                             Austria    2006  Total   
+483                                          Azerbaijan    2006  Total   
+515                                             Bahamas    2006  Total   
+533                                             Bahrain    2006  Total   
+573                                          Bangladesh    2006  Total   
+605                                            Barbados    2006  Total   
+645                                             Belarus    2006  Total   
+699                                             Belgium    2006  Total   
+753                                              Belize    2006  Total   
+807                                               Benin    2006  Total   
+861                                              Bhutan    2006  Total   
+915                    Bolivia (Plurinational State of)    2006  Total   
+969                              Bosnia and Herzegovina    2006  Total   
+1023                                           Botswana    2006  Total   
+1077                                             Brazil    2006  Total   
+1140                                           Bulgaria    2006  Total   
+1194                                       Burkina Faso    2006  Total   
+1248                                            Burundi    2006  Total   
+1302                                         Cabo Verde    2006  Total   
+1356                                           Cambodia    2006  Total   
+1410                                           Cameroon    2006  Total   
+                                                ...     ...    ...   
+7831                                 Sudan (until 2011)    2006  Total   
+7885                                           Suriname    2006  Total   
+7939                                             Sweden    2006  Total   
+7993                                        Switzerland    2006  Total   
+8045                               Syrian Arab Republic    2006  Total   
+8099                                         Tajikistan    2006  Total   
+8153                                           Thailand    2006  Total   
+8207          The former Yugoslav Republic of Macedonia    2006  Total   
+8261                                        Timor-Leste    2006  Total   
+8309                                               Togo    2006  Total   
+8363                                              Tonga    2006  Total   
+8395                                Trinidad and Tobago    2006  Total   
+8435                                            Tunisia    2006  Total   
+8489                                             Turkey    2006  Total   
+8543                                       Turkmenistan    2006  Total   
+8597                                             Tuvalu    2006  Total   
+8648                                             Uganda    2006  Total   
+8702                                            Ukraine    2006  Total   
+8734                               United Arab Emirates    2006  Total   
+8774  United Kingdom of Great Britain and Northern I...    2006  Total   
+8828                        United Republic of Tanzania    2006  Total   
+8882                           United States of America    2006  Total   
+8936                                            Uruguay    2006  Total   
+8990                                         Uzbekistan    2006  Total   
+9044                                            Vanuatu    2006  Total   
+9076                 Venezuela (Bolivarian Republic of)    2006  Total   
+9111                                           Viet Nam    2006  Total   
+9165                                              Yemen    2006  Total   
+9219                                             Zambia    2006  Total   
+9273                                           Zimbabwe    2006  Total   
+
+      First Tooltip  
+33           21.790  
+87            0.570  
+141           3.810  
+195           0.000  
+249          34.250  
+281           0.850  
+315           1.560  
+357           0.045  
+389           0.000  
+429           0.000  
+483           0.200  
+515           0.770  
+533           0.000  
+573          10.760  
+605           0.760  
+645           0.000  
+699           0.000  
+753           3.170  
+807          62.610  
+861           6.390  
+915          25.780  
+969           0.280  
+1023         18.520  
+1077          5.860  
+1140          0.000  
+1194         62.430  
+1248          2.730  
+1302         39.500  
+1356         66.120  
+1410          7.280  
+            ...  
+7831         46.480  
+7885          6.400  
+7939          0.000  
+7993          0.000  
+8045          1.280  
+8099          0.820  
+8153          0.730  
+8207          0.210  
+8261         36.060  
+8309         54.960  
+8363          0.270  
+8395          0.210  
+8435          6.230  
+8489          0.450  
+8543          0.290  
+8597          3.920  
+8648         11.300  
+8702          0.020  
+8734          0.059  
+8774          0.000  
+8828         10.610  
+8882          0.000  
+8936          1.340  
+8990          0.051  
+9044          2.030  
+9076          7.110  
+9111         11.910  
+9165         26.470  
+9219         22.620  
+9273         28.290  
+
+[192 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2006 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+34                                          Afghanistan    2006  Urban   
+88                                              Albania    2006  Urban   
+142                                             Algeria    2006  Urban   
+196                                             Andorra    2006  Urban   
+250                                              Angola    2006  Urban   
+316                                           Argentina    2006  Urban   
+358                                             Armenia    2006  Urban   
+430                                             Austria    2006  Urban   
+484                                          Azerbaijan    2006  Urban   
+574                                          Bangladesh    2006  Urban   
+646                                             Belarus    2006  Urban   
+700                                             Belgium    2006  Urban   
+754                                              Belize    2006  Urban   
+808                                               Benin    2006  Urban   
+862                                              Bhutan    2006  Urban   
+916                    Bolivia (Plurinational State of)    2006  Urban   
+970                              Bosnia and Herzegovina    2006  Urban   
+1024                                           Botswana    2006  Urban   
+1078                                             Brazil    2006  Urban   
+1141                                           Bulgaria    2006  Urban   
+1195                                       Burkina Faso    2006  Urban   
+1249                                            Burundi    2006  Urban   
+1303                                         Cabo Verde    2006  Urban   
+1357                                           Cambodia    2006  Urban   
+1411                                           Cameroon    2006  Urban   
+1465                                             Canada    2006  Urban   
+1516                           Central African Republic    2006  Urban   
+1570                                               Chad    2006  Urban   
+1624                                              Chile    2006  Urban   
+1678                                              China    2006  Urban   
+                                                ...     ...    ...   
+7652                                       South Africa    2006  Urban   
+7727                                              Spain    2006  Urban   
+7781                                          Sri Lanka    2006  Urban   
+7832                                 Sudan (until 2011)    2006  Urban   
+7886                                           Suriname    2006  Urban   
+7940                                             Sweden    2006  Urban   
+7994                                        Switzerland    2006  Urban   
+8046                               Syrian Arab Republic    2006  Urban   
+8100                                         Tajikistan    2006  Urban   
+8154                                           Thailand    2006  Urban   
+8208          The former Yugoslav Republic of Macedonia    2006  Urban   
+8262                                        Timor-Leste    2006  Urban   
+8310                                               Togo    2006  Urban   
+8364                                              Tonga    2006  Urban   
+8436                                            Tunisia    2006  Urban   
+8490                                             Turkey    2006  Urban   
+8544                                       Turkmenistan    2006  Urban   
+8598                                             Tuvalu    2006  Urban   
+8649                                             Uganda    2006  Urban   
+8703                                            Ukraine    2006  Urban   
+8775  United Kingdom of Great Britain and Northern I...    2006  Urban   
+8829                        United Republic of Tanzania    2006  Urban   
+8883                           United States of America    2006  Urban   
+8937                                            Uruguay    2006  Urban   
+8991                                         Uzbekistan    2006  Urban   
+9045                                            Vanuatu    2006  Urban   
+9112                                           Viet Nam    2006  Urban   
+9166                                              Yemen    2006  Urban   
+9220                                             Zambia    2006  Urban   
+9274                                           Zimbabwe    2006  Urban   
+
+      First Tooltip  
+34            4.620  
+88            0.290  
+142           0.520  
+196           0.000  
+250          12.700  
+316           0.900  
+358           0.071  
+430           0.000  
+484           0.140  
+574           3.280  
+646           0.000  
+700           0.000  
+754           1.080  
+808          34.730  
+862           2.880  
+916          10.420  
+970           0.160  
+1024          2.850  
+1078          2.010  
+1141          0.000  
+1195          8.560  
+1249          1.530  
+1303         26.300  
+1357         26.270  
+1411          1.060  
+1465          0.000  
+1516          5.010  
+1570         17.610  
+1624          1.390  
+1678          0.210  
+            ...  
+7652          1.990  
+7727          0.000  
+7781          1.930  
+7832         20.210  
+7886          0.140  
+7940          0.000  
+7994          0.000  
+8046          0.130  
+8100          0.430  
+8154          0.000  
+8208          0.000  
+8262         14.440  
+8310         20.000  
+8364          0.130  
+8436          0.340  
+8490          0.130  
+8544          0.000  
+8598          0.880  
+8649          1.990  
+8703          0.000  
+8775          0.000  
+8829          2.220  
+8883          0.000  
+8937          1.150  
+8991          0.000  
+9045          0.290  
+9112          3.690  
+9166          3.450  
+9220          2.820  
+9274          2.560  
+
+[167 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2006 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+35                                          Afghanistan    2006  Rural   
+89                                              Albania    2006  Rural   
+143                                             Algeria    2006  Rural   
+197                                             Andorra    2006  Rural   
+251                                              Angola    2006  Rural   
+317                                           Argentina    2006  Rural   
+359                                             Armenia    2006  Rural   
+431                                             Austria    2006  Rural   
+485                                          Azerbaijan    2006  Rural   
+575                                          Bangladesh    2006  Rural   
+647                                             Belarus    2006  Rural   
+701                                             Belgium    2006  Rural   
+755                                              Belize    2006  Rural   
+809                                               Benin    2006  Rural   
+863                                              Bhutan    2006  Rural   
+917                    Bolivia (Plurinational State of)    2006  Rural   
+971                              Bosnia and Herzegovina    2006  Rural   
+1025                                           Botswana    2006  Rural   
+1079                                             Brazil    2006  Rural   
+1142                                           Bulgaria    2006  Rural   
+1196                                       Burkina Faso    2006  Rural   
+1250                                            Burundi    2006  Rural   
+1304                                         Cabo Verde    2006  Rural   
+1358                                           Cambodia    2006  Rural   
+1412                                           Cameroon    2006  Rural   
+1466                                             Canada    2006  Rural   
+1517                           Central African Republic    2006  Rural   
+1571                                               Chad    2006  Rural   
+1625                                              Chile    2006  Rural   
+1679                                              China    2006  Rural   
+                                                ...     ...    ...   
+7653                                       South Africa    2006  Rural   
+7728                                              Spain    2006  Rural   
+7782                                          Sri Lanka    2006  Rural   
+7833                                 Sudan (until 2011)    2006  Rural   
+7887                                           Suriname    2006  Rural   
+7941                                             Sweden    2006  Rural   
+7995                                        Switzerland    2006  Rural   
+8047                               Syrian Arab Republic    2006  Rural   
+8101                                         Tajikistan    2006  Rural   
+8155                                           Thailand    2006  Rural   
+8209          The former Yugoslav Republic of Macedonia    2006  Rural   
+8263                                        Timor-Leste    2006  Rural   
+8311                                               Togo    2006  Rural   
+8365                                              Tonga    2006  Rural   
+8437                                            Tunisia    2006  Rural   
+8491                                             Turkey    2006  Rural   
+8545                                       Turkmenistan    2006  Rural   
+8599                                             Tuvalu    2006  Rural   
+8650                                             Uganda    2006  Rural   
+8704                                            Ukraine    2006  Rural   
+8776  United Kingdom of Great Britain and Northern I...    2006  Rural   
+8830                        United Republic of Tanzania    2006  Rural   
+8884                           United States of America    2006  Rural   
+8938                                            Uruguay    2006  Rural   
+8992                                         Uzbekistan    2006  Rural   
+9046                                            Vanuatu    2006  Rural   
+9113                                           Viet Nam    2006  Rural   
+9167                                              Yemen    2006  Rural   
+9221                                             Zambia    2006  Rural   
+9275                                           Zimbabwe    2006  Rural   
+
+      First Tooltip  
+35           26.890  
+89            0.840  
+143           9.800  
+197           0.000  
+251          62.530  
+317           7.690  
+359           0.000  
+431           0.000  
+485           0.270  
+575          13.600  
+647           0.000  
+701           0.000  
+755           4.910  
+809          82.030  
+863           8.020  
+917          53.850  
+971           0.360  
+1025         38.790  
+1079         24.870  
+1142          0.000  
+1196         77.930  
+1250          2.860  
+1304         58.130  
+1358         75.640  
+1412         13.300  
+1466          0.000  
+1517         35.120  
+1571         84.100  
+1625          2.540  
+1679          3.020  
+            ...  
+7653         17.260  
+7728          0.000  
+7782          3.170  
+7833         59.310  
+7887         18.900  
+7941          0.000  
+7995          0.000  
+8047          2.630  
+8101          0.960  
+8155          1.190  
+8209          0.500  
+8263         43.810  
+8311         74.330  
+8365          0.310  
+8437         17.420  
+8491          1.140  
+8545          0.560  
+8599          7.040  
+8650         13.260  
+8704          0.062  
+8776          0.000  
+8830         13.480  
+8884          0.000  
+8938          4.170  
+8992          0.100  
+9046          2.560  
+9113         15.090  
+9167         36.100  
+9221         34.450  
+9275         41.490  
+
+[163 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182 183 184 185 186 187 188 189 190 191]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162]
