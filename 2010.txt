@@ -1,0 +1,614 @@
+
+#******************* Question - : 2010 :  ********************
+
+
+df2010 = df[df.Period == 2010]
+print("\n\n--------------[ OUTPUT for 2010 ]----------------------\n\n")
+print(df2010[['Location','Period','Dim1','First Tooltip']])
+
+df2010_total = df2010[df2010.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2010 Total ]----------------------\n\n")
+print(df2010_total[['Location','Period','Dim1','First Tooltip']])
+
+df2010_urban = df2010[df2010.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2010 Urban ]----------------------\n\n")
+print(df2010_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2010_rural = df2010[df2010.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2010 Rural ]----------------------\n\n")
+print(df2010_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2010_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2010_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2010_rural['Location']))
+print(i2)
+
+#--------------- plot for 2010 ----------------------
+
+plt.title('Question - : 2010')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2010_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2010_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2010_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2010 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+21                                          Afghanistan    2010  Total   
+22                                          Afghanistan    2010  Urban   
+23                                          Afghanistan    2010  Rural   
+75                                              Albania    2010  Total   
+76                                              Albania    2010  Urban   
+77                                              Albania    2010  Rural   
+129                                             Algeria    2010  Total   
+130                                             Algeria    2010  Urban   
+131                                             Algeria    2010  Rural   
+183                                             Andorra    2010  Total   
+184                                             Andorra    2010  Urban   
+185                                             Andorra    2010  Rural   
+237                                              Angola    2010  Total   
+238                                              Angola    2010  Urban   
+239                                              Angola    2010  Rural   
+277                                 Antigua and Barbuda    2010  Total   
+303                                           Argentina    2010  Total   
+304                                           Argentina    2010  Urban   
+305                                           Argentina    2010  Rural   
+345                                             Armenia    2010  Total   
+346                                             Armenia    2010  Urban   
+347                                             Armenia    2010  Rural   
+385                                           Australia    2010  Total   
+417                                             Austria    2010  Total   
+418                                             Austria    2010  Urban   
+419                                             Austria    2010  Rural   
+471                                          Azerbaijan    2010  Total   
+472                                          Azerbaijan    2010  Urban   
+473                                          Azerbaijan    2010  Rural   
+511                                             Bahamas    2010  Total   
+                                                ...     ...    ...   
+8763  United Kingdom of Great Britain and Northern I...    2010  Urban   
+8764  United Kingdom of Great Britain and Northern I...    2010  Rural   
+8816                        United Republic of Tanzania    2010  Total   
+8817                        United Republic of Tanzania    2010  Urban   
+8818                        United Republic of Tanzania    2010  Rural   
+8870                           United States of America    2010  Total   
+8871                           United States of America    2010  Urban   
+8872                           United States of America    2010  Rural   
+8924                                            Uruguay    2010  Total   
+8925                                            Uruguay    2010  Urban   
+8926                                            Uruguay    2010  Rural   
+8978                                         Uzbekistan    2010  Total   
+8979                                         Uzbekistan    2010  Urban   
+8980                                         Uzbekistan    2010  Rural   
+9032                                            Vanuatu    2010  Total   
+9033                                            Vanuatu    2010  Urban   
+9034                                            Vanuatu    2010  Rural   
+9072                 Venezuela (Bolivarian Republic of)    2010  Total   
+9099                                           Viet Nam    2010  Total   
+9100                                           Viet Nam    2010  Urban   
+9101                                           Viet Nam    2010  Rural   
+9153                                              Yemen    2010  Total   
+9154                                              Yemen    2010  Urban   
+9155                                              Yemen    2010  Rural   
+9207                                             Zambia    2010  Total   
+9208                                             Zambia    2010  Urban   
+9209                                             Zambia    2010  Rural   
+9261                                           Zimbabwe    2010  Total   
+9262                                           Zimbabwe    2010  Urban   
+9263                                           Zimbabwe    2010  Rural   
+
+      First Tooltip  
+21           18.400  
+22            2.600  
+23           23.310  
+75            0.300  
+76            0.000  
+77            0.630  
+129           2.350  
+130           0.370  
+131           6.460  
+183           0.000  
+184           0.000  
+185           0.000  
+237          29.070  
+238           8.440  
+239          59.740  
+277           0.510  
+303           1.860  
+304           1.280  
+305           7.690  
+345           0.024  
+346           0.037  
+347           0.000  
+385           0.000  
+417           0.000  
+418           0.000  
+419           0.000  
+471           0.240  
+472           0.170  
+473           0.310  
+511           0.530  
+            ...  
+8763          0.000  
+8764          0.000  
+8816         11.110  
+8817          2.040  
+8818         14.650  
+8870          0.000  
+8871          0.000  
+8872          0.000  
+8924          0.980  
+8925          0.880  
+8926          2.690  
+8978          0.049  
+8979          0.000  
+8980          0.100  
+9032          1.470  
+9033          0.350  
+9034          1.840  
+9072          5.680  
+9099          8.220  
+9100          2.750  
+9101         10.600  
+9153         23.540  
+9154          2.380  
+9155         33.390  
+9207         21.340  
+9208          2.790  
+9209         33.380  
+9261         27.120  
+9262          1.670  
+9263         39.760  
+
+[521 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2010 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+21                                          Afghanistan    2010  Total   
+75                                              Albania    2010  Total   
+129                                             Algeria    2010  Total   
+183                                             Andorra    2010  Total   
+237                                              Angola    2010  Total   
+277                                 Antigua and Barbuda    2010  Total   
+303                                           Argentina    2010  Total   
+345                                             Armenia    2010  Total   
+385                                           Australia    2010  Total   
+417                                             Austria    2010  Total   
+471                                          Azerbaijan    2010  Total   
+511                                             Bahamas    2010  Total   
+529                                             Bahrain    2010  Total   
+561                                          Bangladesh    2010  Total   
+601                                            Barbados    2010  Total   
+633                                             Belarus    2010  Total   
+687                                             Belgium    2010  Total   
+741                                              Belize    2010  Total   
+795                                               Benin    2010  Total   
+849                                              Bhutan    2010  Total   
+903                    Bolivia (Plurinational State of)    2010  Total   
+957                              Bosnia and Herzegovina    2010  Total   
+1011                                           Botswana    2010  Total   
+1065                                             Brazil    2010  Total   
+1103                                  Brunei Darussalam    2010  Total   
+1128                                           Bulgaria    2010  Total   
+1182                                       Burkina Faso    2010  Total   
+1236                                            Burundi    2010  Total   
+1290                                         Cabo Verde    2010  Total   
+1344                                           Cambodia    2010  Total   
+                                                ...     ...    ...   
+7819                                 Sudan (until 2011)    2010  Total   
+7873                                           Suriname    2010  Total   
+7927                                             Sweden    2010  Total   
+7981                                        Switzerland    2010  Total   
+8033                               Syrian Arab Republic    2010  Total   
+8087                                         Tajikistan    2010  Total   
+8141                                           Thailand    2010  Total   
+8195          The former Yugoslav Republic of Macedonia    2010  Total   
+8249                                        Timor-Leste    2010  Total   
+8297                                               Togo    2010  Total   
+8351                                              Tonga    2010  Total   
+8391                                Trinidad and Tobago    2010  Total   
+8423                                            Tunisia    2010  Total   
+8477                                             Turkey    2010  Total   
+8531                                       Turkmenistan    2010  Total   
+8585                                             Tuvalu    2010  Total   
+8636                                             Uganda    2010  Total   
+8690                                            Ukraine    2010  Total   
+8730                               United Arab Emirates    2010  Total   
+8762  United Kingdom of Great Britain and Northern I...    2010  Total   
+8816                        United Republic of Tanzania    2010  Total   
+8870                           United States of America    2010  Total   
+8924                                            Uruguay    2010  Total   
+8978                                         Uzbekistan    2010  Total   
+9032                                            Vanuatu    2010  Total   
+9072                 Venezuela (Bolivarian Republic of)    2010  Total   
+9099                                           Viet Nam    2010  Total   
+9153                                              Yemen    2010  Total   
+9207                                             Zambia    2010  Total   
+9261                                           Zimbabwe    2010  Total   
+
+      First Tooltip  
+21           18.400  
+75            0.300  
+129           2.350  
+183           0.000  
+237          29.070  
+277           0.510  
+303           1.860  
+345           0.024  
+385           0.000  
+417           0.000  
+471           0.240  
+511           0.530  
+529           0.000  
+561           6.390  
+601           0.790  
+633           0.000  
+687           0.000  
+741           2.310  
+795          59.200  
+849           3.690  
+903          21.090  
+957           0.025  
+1011         15.140  
+1065          4.020  
+1103          2.600  
+1128          0.000  
+1182         56.510  
+1236          2.700  
+1290         32.130  
+1344         53.580  
+            ...  
+7819         37.730  
+7873          5.120  
+7927          0.000  
+7981          0.000  
+8033          0.810  
+8087          0.420  
+8141          0.410  
+8195          0.490  
+8249         30.010  
+8297         52.450  
+8351          0.089  
+8391          0.130  
+8423          3.480  
+8477          0.380  
+8531          0.180  
+8585          5.490  
+8636          9.160  
+8690          0.001  
+8730          0.059  
+8762          0.000  
+8816         11.110  
+8870          0.000  
+8924          0.980  
+8978          0.049  
+9032          1.470  
+9072          5.680  
+9099          8.220  
+9153         23.540  
+9207         21.340  
+9261         27.120  
+
+[192 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2010 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+22                                          Afghanistan    2010  Urban   
+76                                              Albania    2010  Urban   
+130                                             Algeria    2010  Urban   
+184                                             Andorra    2010  Urban   
+238                                              Angola    2010  Urban   
+304                                           Argentina    2010  Urban   
+346                                             Armenia    2010  Urban   
+418                                             Austria    2010  Urban   
+472                                          Azerbaijan    2010  Urban   
+562                                          Bangladesh    2010  Urban   
+634                                             Belarus    2010  Urban   
+688                                             Belgium    2010  Urban   
+742                                              Belize    2010  Urban   
+796                                               Benin    2010  Urban   
+850                                              Bhutan    2010  Urban   
+904                    Bolivia (Plurinational State of)    2010  Urban   
+958                              Bosnia and Herzegovina    2010  Urban   
+1012                                           Botswana    2010  Urban   
+1066                                             Brazil    2010  Urban   
+1129                                           Bulgaria    2010  Urban   
+1183                                       Burkina Faso    2010  Urban   
+1237                                            Burundi    2010  Urban   
+1291                                         Cabo Verde    2010  Urban   
+1345                                           Cambodia    2010  Urban   
+1399                                           Cameroon    2010  Urban   
+1453                                             Canada    2010  Urban   
+1504                           Central African Republic    2010  Urban   
+1558                                               Chad    2010  Urban   
+1612                                              Chile    2010  Urban   
+1666                                              China    2010  Urban   
+                                                ...     ...    ...   
+7640                                       South Africa    2010  Urban   
+7715                                              Spain    2010  Urban   
+7769                                          Sri Lanka    2010  Urban   
+7820                                 Sudan (until 2011)    2010  Urban   
+7874                                           Suriname    2010  Urban   
+7928                                             Sweden    2010  Urban   
+7982                                        Switzerland    2010  Urban   
+8034                               Syrian Arab Republic    2010  Urban   
+8088                                         Tajikistan    2010  Urban   
+8142                                           Thailand    2010  Urban   
+8196          The former Yugoslav Republic of Macedonia    2010  Urban   
+8250                                        Timor-Leste    2010  Urban   
+8298                                               Togo    2010  Urban   
+8352                                              Tonga    2010  Urban   
+8424                                            Tunisia    2010  Urban   
+8478                                             Turkey    2010  Urban   
+8532                                       Turkmenistan    2010  Urban   
+8586                                             Tuvalu    2010  Urban   
+8637                                             Uganda    2010  Urban   
+8691                                            Ukraine    2010  Urban   
+8763  United Kingdom of Great Britain and Northern I...    2010  Urban   
+8817                        United Republic of Tanzania    2010  Urban   
+8871                           United States of America    2010  Urban   
+8925                                            Uruguay    2010  Urban   
+8979                                         Uzbekistan    2010  Urban   
+9033                                            Vanuatu    2010  Urban   
+9100                                           Viet Nam    2010  Urban   
+9154                                              Yemen    2010  Urban   
+9208                                             Zambia    2010  Urban   
+9262                                           Zimbabwe    2010  Urban   
+
+      First Tooltip  
+22            2.600  
+76            0.000  
+130           0.370  
+184           0.000  
+238           8.440  
+304           1.280  
+346           0.037  
+418           0.000  
+472           0.170  
+562           1.990  
+634           0.000  
+688           0.000  
+742           0.960  
+796          32.540  
+850           1.650  
+904           7.370  
+958           0.025  
+1012          2.250  
+1066          1.340  
+1129          0.000  
+1183          8.110  
+1237          1.200  
+1291         21.200  
+1345         16.080  
+1399          1.160  
+1453          0.000  
+1504          5.990  
+1558         17.170  
+1612          0.870  
+1666          0.160  
+            ...  
+7640          1.510  
+7715          0.000  
+7769          1.120  
+7820         12.790  
+7874          0.220  
+7928          0.000  
+7982          0.000  
+8034          0.000  
+8088          0.140  
+8142          0.000  
+8196          0.000  
+8250          9.090  
+8298         17.390  
+8352          0.042  
+8424          0.180  
+8478          0.048  
+8532          0.000  
+8586          3.360  
+8637          2.010  
+8691          0.000  
+8763          0.000  
+8817          2.040  
+8871          0.000  
+8925          0.880  
+8979          0.000  
+9033          0.350  
+9100          2.750  
+9154          2.380  
+9208          2.790  
+9262          1.670  
+
+[167 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2010 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+23                                          Afghanistan    2010  Rural   
+77                                              Albania    2010  Rural   
+131                                             Algeria    2010  Rural   
+185                                             Andorra    2010  Rural   
+239                                              Angola    2010  Rural   
+305                                           Argentina    2010  Rural   
+347                                             Armenia    2010  Rural   
+419                                             Austria    2010  Rural   
+473                                          Azerbaijan    2010  Rural   
+563                                          Bangladesh    2010  Rural   
+635                                             Belarus    2010  Rural   
+689                                             Belgium    2010  Rural   
+743                                              Belize    2010  Rural   
+797                                               Benin    2010  Rural   
+851                                              Bhutan    2010  Rural   
+905                    Bolivia (Plurinational State of)    2010  Rural   
+959                              Bosnia and Herzegovina    2010  Rural   
+1013                                           Botswana    2010  Rural   
+1067                                             Brazil    2010  Rural   
+1130                                           Bulgaria    2010  Rural   
+1184                                       Burkina Faso    2010  Rural   
+1238                                            Burundi    2010  Rural   
+1292                                         Cabo Verde    2010  Rural   
+1346                                           Cambodia    2010  Rural   
+1400                                           Cameroon    2010  Rural   
+1454                                             Canada    2010  Rural   
+1505                           Central African Republic    2010  Rural   
+1559                                               Chad    2010  Rural   
+1613                                              Chile    2010  Rural   
+1667                                              China    2010  Rural   
+                                                ...     ...    ...   
+7641                                       South Africa    2010  Rural   
+7716                                              Spain    2010  Rural   
+7770                                          Sri Lanka    2010  Rural   
+7821                                 Sudan (until 2011)    2010  Rural   
+7875                                           Suriname    2010  Rural   
+7929                                             Sweden    2010  Rural   
+7983                                        Switzerland    2010  Rural   
+8035                               Syrian Arab Republic    2010  Rural   
+8089                                         Tajikistan    2010  Rural   
+8143                                           Thailand    2010  Rural   
+8197          The former Yugoslav Republic of Macedonia    2010  Rural   
+8251                                        Timor-Leste    2010  Rural   
+8299                                               Togo    2010  Rural   
+8353                                              Tonga    2010  Rural   
+8425                                            Tunisia    2010  Rural   
+8479                                             Turkey    2010  Rural   
+8533                                       Turkmenistan    2010  Rural   
+8587                                             Tuvalu    2010  Rural   
+8638                                             Uganda    2010  Rural   
+8692                                            Ukraine    2010  Rural   
+8764  United Kingdom of Great Britain and Northern I...    2010  Rural   
+8818                        United Republic of Tanzania    2010  Rural   
+8872                           United States of America    2010  Rural   
+8926                                            Uruguay    2010  Rural   
+8980                                         Uzbekistan    2010  Rural   
+9034                                            Vanuatu    2010  Rural   
+9101                                           Viet Nam    2010  Rural   
+9155                                              Yemen    2010  Rural   
+9209                                             Zambia    2010  Rural   
+9263                                           Zimbabwe    2010  Rural   
+
+      First Tooltip  
+23           23.310  
+77            0.630  
+131           6.460  
+185           0.000  
+239          59.740  
+305           7.690  
+347           0.000  
+419           0.000  
+473           0.310  
+563           8.320  
+635           0.000  
+689           0.000  
+743           3.420  
+797          79.380  
+851           4.790  
+905          48.260  
+959           0.025  
+1013         36.540  
+1067         18.440  
+1130          0.000  
+1184         72.330  
+1238          2.880  
+1292         49.830  
+1346         63.130  
+1400         13.600  
+1454          0.000  
+1505         35.410  
+1559         83.330  
+1613          1.940  
+1667          2.080  
+            ...  
+7641         12.050  
+7716          0.000  
+7770          2.270  
+7821         50.060  
+7875         14.790  
+7929          0.000  
+7983          0.000  
+8035          1.830  
+8089          0.530  
+8143          0.740  
+8197          1.140  
+8251         38.040  
+8299         73.510  
+8353          0.100  
+8425         10.090  
+8479          1.190  
+8533          0.350  
+8587          8.080  
+8638         10.880  
+8692          0.004  
+8764          0.000  
+8818         14.650  
+8872          0.000  
+8926          2.690  
+8980          0.100  
+9034          1.840  
+9101         10.600  
+9155         33.390  
+9209         33.380  
+9263         39.760  
+
+[162 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182 183 184 185 186 187 188 189 190 191]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161]
