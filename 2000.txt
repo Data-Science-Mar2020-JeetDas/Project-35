@@ -1,0 +1,611 @@
+
+#******************* Question - : 2000 :  ********************
+
+
+df2000 = df[df.Period == 2000]
+print("\n\n--------------[ OUTPUT for 2000 ]----------------------\n\n")
+print(df2000[['Location','Period','Dim1','First Tooltip']])
+
+df2000_total = df2000[df2000.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2000 Total ]----------------------\n\n")
+print(df2000_total[['Location','Period','Dim1','First Tooltip']])
+
+df2000_urban = df2000[df2000.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2000 Urban ]----------------------\n\n")
+print(df2000_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2000_rural = df2000[df2000.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2000 Rural ]----------------------\n\n")
+print(df2000_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2000_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2000_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2000_rural['Location']))
+print(i2)
+
+#--------------- plot for 2000 ----------------------
+
+plt.title('Question - : 2000')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2000_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2000_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2000_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2000 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+51                                          Afghanistan    2000  Total   
+52                                          Afghanistan    2000  Urban   
+53                                          Afghanistan    2000  Rural   
+105                                             Albania    2000  Total   
+106                                             Albania    2000  Urban   
+107                                             Albania    2000  Rural   
+159                                             Algeria    2000  Total   
+160                                             Algeria    2000  Urban   
+161                                             Algeria    2000  Rural   
+213                                             Andorra    2000  Total   
+214                                             Andorra    2000  Urban   
+215                                             Andorra    2000  Rural   
+267                                              Angola    2000  Total   
+268                                              Angola    2000  Urban   
+269                                              Angola    2000  Rural   
+287                                 Antigua and Barbuda    2000  Total   
+323                                           Argentina    2000  Urban   
+375                                             Armenia    2000  Total   
+376                                             Armenia    2000  Urban   
+377                                             Armenia    2000  Rural   
+395                                           Australia    2000  Total   
+447                                             Austria    2000  Total   
+448                                             Austria    2000  Urban   
+449                                             Austria    2000  Rural   
+501                                          Azerbaijan    2000  Total   
+502                                          Azerbaijan    2000  Urban   
+503                                          Azerbaijan    2000  Rural   
+521                                             Bahamas    2000  Total   
+539                                             Bahrain    2000  Total   
+591                                          Bangladesh    2000  Total   
+                                                ...     ...    ...   
+8792  United Kingdom of Great Britain and Northern I...    2000  Total   
+8793  United Kingdom of Great Britain and Northern I...    2000  Urban   
+8794  United Kingdom of Great Britain and Northern I...    2000  Rural   
+8846                        United Republic of Tanzania    2000  Total   
+8847                        United Republic of Tanzania    2000  Urban   
+8848                        United Republic of Tanzania    2000  Rural   
+8900                           United States of America    2000  Total   
+8901                           United States of America    2000  Urban   
+8902                           United States of America    2000  Rural   
+8954                                            Uruguay    2000  Total   
+8955                                            Uruguay    2000  Urban   
+8956                                            Uruguay    2000  Rural   
+9008                                         Uzbekistan    2000  Total   
+9009                                         Uzbekistan    2000  Urban   
+9010                                         Uzbekistan    2000  Rural   
+9062                                            Vanuatu    2000  Total   
+9063                                            Vanuatu    2000  Urban   
+9064                                            Vanuatu    2000  Rural   
+9129                                           Viet Nam    2000  Total   
+9130                                           Viet Nam    2000  Urban   
+9131                                           Viet Nam    2000  Rural   
+9183                                              Yemen    2000  Total   
+9184                                              Yemen    2000  Urban   
+9185                                              Yemen    2000  Rural   
+9237                                             Zambia    2000  Total   
+9238                                             Zambia    2000  Urban   
+9239                                             Zambia    2000  Rural   
+9291                                           Zimbabwe    2000  Total   
+9292                                           Zimbabwe    2000  Urban   
+9293                                           Zimbabwe    2000  Rural   
+
+      First Tooltip  
+51           26.020  
+52            7.140  
+53           31.370  
+105           0.860  
+106           0.460  
+107           1.150  
+159           6.380  
+160           0.740  
+161          14.810  
+213           0.000  
+214           0.000  
+215           0.000  
+267          42.870  
+268          19.100  
+269          66.710  
+287           1.350  
+323           0.610  
+375           0.063  
+376           0.097  
+377           0.000  
+395           0.000  
+447           0.000  
+448           0.000  
+449           0.000  
+501           0.140  
+502           0.083  
+503           0.200  
+521           1.140  
+539           0.000  
+591          17.680  
+            ...  
+8792          0.000  
+8793          0.000  
+8794          0.000  
+8846          9.660  
+8847          2.510  
+8848         11.720  
+8900          0.000  
+8901          0.000  
+8902          0.000  
+8954          1.570  
+8955          1.280  
+8956          4.910  
+9008          0.054  
+9009          0.000  
+9010          0.100  
+9062          2.340  
+9063          0.260  
+9064          2.920  
+9129         17.730  
+9130          5.090  
+9131         21.810  
+9183         29.800  
+9184          4.530  
+9185         38.800  
+9237         24.500  
+9238          2.860  
+9239         36.060  
+9291         30.160  
+9292          3.680  
+9293         43.650  
+
+[492 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2000 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+51                                          Afghanistan    2000  Total   
+105                                             Albania    2000  Total   
+159                                             Algeria    2000  Total   
+213                                             Andorra    2000  Total   
+267                                              Angola    2000  Total   
+287                                 Antigua and Barbuda    2000  Total   
+375                                             Armenia    2000  Total   
+395                                           Australia    2000  Total   
+447                                             Austria    2000  Total   
+501                                          Azerbaijan    2000  Total   
+521                                             Bahamas    2000  Total   
+539                                             Bahrain    2000  Total   
+591                                          Bangladesh    2000  Total   
+611                                            Barbados    2000  Total   
+663                                             Belarus    2000  Total   
+717                                             Belgium    2000  Total   
+771                                              Belize    2000  Total   
+825                                               Benin    2000  Total   
+879                                              Bhutan    2000  Total   
+933                    Bolivia (Plurinational State of)    2000  Total   
+987                              Bosnia and Herzegovina    2000  Total   
+1041                                           Botswana    2000  Total   
+1095                                             Brazil    2000  Total   
+1158                                           Bulgaria    2000  Total   
+1212                                       Burkina Faso    2000  Total   
+1266                                            Burundi    2000  Total   
+1320                                         Cabo Verde    2000  Total   
+1374                                           Cambodia    2000  Total   
+1428                                           Cameroon    2000  Total   
+1482                                             Canada    2000  Total   
+                                                ...     ...    ...   
+7615                                            Somalia    2000  Total   
+7669                                       South Africa    2000  Total   
+7744                                              Spain    2000  Total   
+7849                                 Sudan (until 2011)    2000  Total   
+7903                                           Suriname    2000  Total   
+7957                                             Sweden    2000  Total   
+8011                                        Switzerland    2000  Total   
+8063                               Syrian Arab Republic    2000  Total   
+8117                                         Tajikistan    2000  Total   
+8171                                           Thailand    2000  Total   
+8225          The former Yugoslav Republic of Macedonia    2000  Total   
+8327                                               Togo    2000  Total   
+8381                                              Tonga    2000  Total   
+8401                                Trinidad and Tobago    2000  Total   
+8453                                            Tunisia    2000  Total   
+8507                                             Turkey    2000  Total   
+8561                                       Turkmenistan    2000  Total   
+8666                                             Uganda    2000  Total   
+8720                                            Ukraine    2000  Total   
+8740                               United Arab Emirates    2000  Total   
+8792  United Kingdom of Great Britain and Northern I...    2000  Total   
+8846                        United Republic of Tanzania    2000  Total   
+8900                           United States of America    2000  Total   
+8954                                            Uruguay    2000  Total   
+9008                                         Uzbekistan    2000  Total   
+9062                                            Vanuatu    2000  Total   
+9129                                           Viet Nam    2000  Total   
+9183                                              Yemen    2000  Total   
+9237                                             Zambia    2000  Total   
+9291                                           Zimbabwe    2000  Total   
+
+      First Tooltip  
+51           26.020  
+105           0.860  
+159           6.380  
+213           0.000  
+267          42.870  
+287           1.350  
+375           0.063  
+395           0.000  
+447           0.000  
+501           0.140  
+521           1.140  
+539           0.000  
+591          17.680  
+611           0.700  
+663           0.000  
+717           0.000  
+771           4.470  
+825          67.610  
+879          10.120  
+933          33.040  
+987           0.660  
+1041         21.710  
+1095          8.940  
+1158          0.000  
+1212         71.390  
+1266          2.760  
+1320         51.000  
+1374         84.590  
+1428          7.410  
+1482          0.000  
+            ...  
+7615         58.750  
+7669         12.350  
+7744          0.000  
+7849         50.930  
+7903          8.430  
+7957          0.000  
+8011          0.000  
+8063          1.840  
+8117          1.420  
+8171          1.340  
+8225          0.075  
+8327         58.560  
+8381          0.320  
+8401          0.330  
+8453         10.760  
+8507          0.540  
+8561          0.590  
+8666         14.640  
+8720          0.058  
+8740          0.059  
+8792          0.000  
+8846          9.660  
+8900          0.000  
+8954          1.570  
+9008          0.054  
+9062          2.340  
+9129         17.730  
+9183         29.800  
+9237         24.500  
+9291         30.160  
+
+[180 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2000 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+52                                          Afghanistan    2000  Urban   
+106                                             Albania    2000  Urban   
+160                                             Algeria    2000  Urban   
+214                                             Andorra    2000  Urban   
+268                                              Angola    2000  Urban   
+323                                           Argentina    2000  Urban   
+376                                             Armenia    2000  Urban   
+448                                             Austria    2000  Urban   
+502                                          Azerbaijan    2000  Urban   
+592                                          Bangladesh    2000  Urban   
+664                                             Belarus    2000  Urban   
+718                                             Belgium    2000  Urban   
+772                                              Belize    2000  Urban   
+826                                               Benin    2000  Urban   
+880                                              Bhutan    2000  Urban   
+934                    Bolivia (Plurinational State of)    2000  Urban   
+988                              Bosnia and Herzegovina    2000  Urban   
+1042                                           Botswana    2000  Urban   
+1096                                             Brazil    2000  Urban   
+1159                                           Bulgaria    2000  Urban   
+1213                                       Burkina Faso    2000  Urban   
+1267                                            Burundi    2000  Urban   
+1321                                         Cabo Verde    2000  Urban   
+1375                                           Cambodia    2000  Urban   
+1429                                           Cameroon    2000  Urban   
+1483                                             Canada    2000  Urban   
+1534                           Central African Republic    2000  Urban   
+1588                                               Chad    2000  Urban   
+1642                                              Chile    2000  Urban   
+1696                                              China    2000  Urban   
+                                                ...     ...    ...   
+7508                                           Slovenia    2000  Urban   
+7562                                    Solomon Islands    2000  Urban   
+7616                                            Somalia    2000  Urban   
+7670                                       South Africa    2000  Urban   
+7745                                              Spain    2000  Urban   
+7850                                 Sudan (until 2011)    2000  Urban   
+7904                                           Suriname    2000  Urban   
+7958                                             Sweden    2000  Urban   
+8012                                        Switzerland    2000  Urban   
+8064                               Syrian Arab Republic    2000  Urban   
+8118                                         Tajikistan    2000  Urban   
+8172                                           Thailand    2000  Urban   
+8226          The former Yugoslav Republic of Macedonia    2000  Urban   
+8328                                               Togo    2000  Urban   
+8382                                              Tonga    2000  Urban   
+8454                                            Tunisia    2000  Urban   
+8508                                             Turkey    2000  Urban   
+8562                                       Turkmenistan    2000  Urban   
+8667                                             Uganda    2000  Urban   
+8721                                            Ukraine    2000  Urban   
+8793  United Kingdom of Great Britain and Northern I...    2000  Urban   
+8847                        United Republic of Tanzania    2000  Urban   
+8901                           United States of America    2000  Urban   
+8955                                            Uruguay    2000  Urban   
+9009                                         Uzbekistan    2000  Urban   
+9063                                            Vanuatu    2000  Urban   
+9130                                           Viet Nam    2000  Urban   
+9184                                              Yemen    2000  Urban   
+9238                                             Zambia    2000  Urban   
+9292                                           Zimbabwe    2000  Urban   
+
+      First Tooltip  
+52            7.140  
+106           0.460  
+160           0.740  
+214           0.000  
+268          19.100  
+323           0.610  
+376           0.097  
+448           0.000  
+502           0.083  
+592           5.200  
+664           0.000  
+718           0.000  
+772           1.260  
+826          38.000  
+880           4.430  
+934          14.990  
+988           0.370  
+1042          3.750  
+1096          3.010  
+1159          0.000  
+1213          9.120  
+1267          2.020  
+1321         33.950  
+1375         41.560  
+1429          0.900  
+1483          0.000  
+1534          3.520  
+1588         18.270  
+1642          2.180  
+1696          0.210  
+            ...  
+7508          0.000  
+7562          8.540  
+7616         12.330  
+7670          2.710  
+7745          0.000  
+7850         23.910  
+7904          0.030  
+7958          0.000  
+8012          0.000  
+8064          0.000  
+8118          0.870  
+8172          0.210  
+8226          0.000  
+8328         23.910  
+8382          0.000  
+8454          0.580  
+8508          0.240  
+8562          0.260  
+8667          1.970  
+8721          0.000  
+8793          0.000  
+8847          2.510  
+8901          0.000  
+8955          1.280  
+9009          0.000  
+9063          0.260  
+9130          5.090  
+9184          4.530  
+9238          2.860  
+9292          3.680  
+
+[158 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2000 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+53                                          Afghanistan    2000  Rural   
+107                                             Albania    2000  Rural   
+161                                             Algeria    2000  Rural   
+215                                             Andorra    2000  Rural   
+269                                              Angola    2000  Rural   
+377                                             Armenia    2000  Rural   
+449                                             Austria    2000  Rural   
+503                                          Azerbaijan    2000  Rural   
+593                                          Bangladesh    2000  Rural   
+665                                             Belarus    2000  Rural   
+719                                             Belgium    2000  Rural   
+773                                              Belize    2000  Rural   
+827                                               Benin    2000  Rural   
+881                                              Bhutan    2000  Rural   
+935                    Bolivia (Plurinational State of)    2000  Rural   
+989                              Bosnia and Herzegovina    2000  Rural   
+1043                                           Botswana    2000  Rural   
+1097                                             Brazil    2000  Rural   
+1160                                           Bulgaria    2000  Rural   
+1214                                       Burkina Faso    2000  Rural   
+1268                                            Burundi    2000  Rural   
+1322                                         Cabo Verde    2000  Rural   
+1376                                           Cambodia    2000  Rural   
+1430                                           Cameroon    2000  Rural   
+1484                                             Canada    2000  Rural   
+1535                           Central African Republic    2000  Rural   
+1589                                               Chad    2000  Rural   
+1643                                              Chile    2000  Rural   
+1697                                              China    2000  Rural   
+1751                                           Colombia    2000  Rural   
+                                                ...     ...    ...   
+7509                                           Slovenia    2000  Rural   
+7563                                    Solomon Islands    2000  Rural   
+7617                                            Somalia    2000  Rural   
+7671                                       South Africa    2000  Rural   
+7746                                              Spain    2000  Rural   
+7851                                 Sudan (until 2011)    2000  Rural   
+7905                                           Suriname    2000  Rural   
+7959                                             Sweden    2000  Rural   
+8013                                        Switzerland    2000  Rural   
+8065                               Syrian Arab Republic    2000  Rural   
+8119                                         Tajikistan    2000  Rural   
+8173                                           Thailand    2000  Rural   
+8227          The former Yugoslav Republic of Macedonia    2000  Rural   
+8329                                               Togo    2000  Rural   
+8383                                              Tonga    2000  Rural   
+8455                                            Tunisia    2000  Rural   
+8509                                             Turkey    2000  Rural   
+8563                                       Turkmenistan    2000  Rural   
+8668                                             Uganda    2000  Rural   
+8722                                            Ukraine    2000  Rural   
+8794  United Kingdom of Great Britain and Northern I...    2000  Rural   
+8848                        United Republic of Tanzania    2000  Rural   
+8902                           United States of America    2000  Rural   
+8956                                            Uruguay    2000  Rural   
+9010                                         Uzbekistan    2000  Rural   
+9064                                            Vanuatu    2000  Rural   
+9131                                           Viet Nam    2000  Rural   
+9185                                              Yemen    2000  Rural   
+9239                                             Zambia    2000  Rural   
+9293                                           Zimbabwe    2000  Rural   
+
+      First Tooltip  
+53            31.37  
+107            1.15  
+161           14.81  
+215            0.00  
+269           66.71  
+377            0.00  
+449            0.00  
+503            0.20  
+593           21.54  
+665            0.00  
+719            0.00  
+773            7.14  
+827           86.01  
+881           12.06  
+935           62.23  
+989            0.87  
+1043          42.15  
+1097          34.51  
+1160           0.00  
+1214          84.92  
+1268           2.83  
+1322          70.58  
+1376          94.42  
+1430          12.85  
+1484           0.00  
+1535          34.68  
+1589          85.25  
+1643           3.44  
+1697           4.18  
+1751          28.74  
+            ...  
+7509           0.00  
+7563          66.37  
+7617          81.87  
+7671          25.08  
+7746           0.00  
+7851          63.94  
+7905          25.06  
+7959           0.00  
+8013           0.00  
+8065           3.83  
+8119           1.61  
+8173           1.86  
+8227           0.18  
+8329          75.56  
+8383           0.42  
+8455          28.42  
+8509           1.08  
+8563           0.86  
+8668          16.84  
+8722           0.18  
+8794           0.00  
+8848          11.72  
+8902           0.00  
+8956           4.91  
+9010           0.10  
+9064           2.92  
+9131          21.81  
+9185          38.80  
+9239          36.06  
+9293          43.65  
+
+[154 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153]
