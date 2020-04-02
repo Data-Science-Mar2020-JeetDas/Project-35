@@ -1,0 +1,613 @@
+#******************* Question - : 2007 :  ********************
+
+
+df2007 = df[df.Period == 2007]
+print("\n\n--------------[ OUTPUT for 2007 ]----------------------\n\n")
+print(df2007[['Location','Period','Dim1','First Tooltip']])
+
+df2007_total = df2007[df2007.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2007 Total ]----------------------\n\n")
+print(df2007_total[['Location','Period','Dim1','First Tooltip']])
+
+df2007_urban = df2007[df2007.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2007 Urban ]----------------------\n\n")
+print(df2007_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2007_rural = df2007[df2007.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2007 Rural ]----------------------\n\n")
+print(df2007_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2007_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2007_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2007_rural['Location']))
+print(i2)
+
+#--------------- plot for 2007 ----------------------
+
+plt.title('Question - : 2007')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2007_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2007_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2007_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2007 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+30                                          Afghanistan    2007  Total   
+31                                          Afghanistan    2007  Urban   
+32                                          Afghanistan    2007  Rural   
+84                                              Albania    2007  Total   
+85                                              Albania    2007  Urban   
+86                                              Albania    2007  Rural   
+138                                             Algeria    2007  Total   
+139                                             Algeria    2007  Urban   
+140                                             Algeria    2007  Rural   
+192                                             Andorra    2007  Total   
+193                                             Andorra    2007  Urban   
+194                                             Andorra    2007  Rural   
+246                                              Angola    2007  Total   
+247                                              Angola    2007  Urban   
+248                                              Angola    2007  Rural   
+280                                 Antigua and Barbuda    2007  Total   
+312                                           Argentina    2007  Total   
+313                                           Argentina    2007  Urban   
+314                                           Argentina    2007  Rural   
+354                                             Armenia    2007  Total   
+355                                             Armenia    2007  Urban   
+356                                             Armenia    2007  Rural   
+388                                           Australia    2007  Total   
+426                                             Austria    2007  Total   
+427                                             Austria    2007  Urban   
+428                                             Austria    2007  Rural   
+480                                          Azerbaijan    2007  Total   
+481                                          Azerbaijan    2007  Urban   
+482                                          Azerbaijan    2007  Rural   
+514                                             Bahamas    2007  Total   
+                                                ...     ...    ...   
+8772  United Kingdom of Great Britain and Northern I...    2007  Urban   
+8773  United Kingdom of Great Britain and Northern I...    2007  Rural   
+8825                        United Republic of Tanzania    2007  Total   
+8826                        United Republic of Tanzania    2007  Urban   
+8827                        United Republic of Tanzania    2007  Rural   
+8879                           United States of America    2007  Total   
+8880                           United States of America    2007  Urban   
+8881                           United States of America    2007  Rural   
+8933                                            Uruguay    2007  Total   
+8934                                            Uruguay    2007  Urban   
+8935                                            Uruguay    2007  Rural   
+8987                                         Uzbekistan    2007  Total   
+8988                                         Uzbekistan    2007  Urban   
+8989                                         Uzbekistan    2007  Rural   
+9041                                            Vanuatu    2007  Total   
+9042                                            Vanuatu    2007  Urban   
+9043                                            Vanuatu    2007  Rural   
+9075                 Venezuela (Bolivarian Republic of)    2007  Total   
+9108                                           Viet Nam    2007  Total   
+9109                                           Viet Nam    2007  Urban   
+9110                                           Viet Nam    2007  Rural   
+9162                                              Yemen    2007  Total   
+9163                                              Yemen    2007  Urban   
+9164                                              Yemen    2007  Rural   
+9216                                             Zambia    2007  Total   
+9217                                             Zambia    2007  Urban   
+9218                                             Zambia    2007  Rural   
+9270                                           Zimbabwe    2007  Total   
+9271                                           Zimbabwe    2007  Urban   
+9272                                           Zimbabwe    2007  Rural   
+
+      First Tooltip  
+30           20.940  
+31            4.120  
+32           26.000  
+84            0.530  
+85            0.260  
+86            0.790  
+138           3.420  
+139           0.490  
+140           8.960  
+192           0.000  
+193           0.000  
+194           0.000  
+246          32.960  
+247          11.640  
+248          61.830  
+280           0.760  
+312           1.640  
+313           0.990  
+314           7.690  
+354           0.040  
+355           0.063  
+356           0.000  
+388           0.000  
+426           0.000  
+427           0.000  
+428           0.000  
+480           0.210  
+481           0.140  
+482           0.280  
+514           0.710  
+            ...  
+8772          0.000  
+8773          0.000  
+8825         10.740  
+8826          2.180  
+8827         13.770  
+8879          0.000  
+8880          0.000  
+8881          0.000  
+8933          1.250  
+8934          1.080  
+8935          3.800  
+8987          0.050  
+8988          0.000  
+8989          0.100  
+9041          1.890  
+9042          0.300  
+9043          2.380  
+9075          6.760  
+9108         10.970  
+9109          3.450  
+9110         13.970  
+9162         25.730  
+9163          3.180  
+9164         35.420  
+9216         22.300  
+9217          2.810  
+9218         34.180  
+9270         28.000  
+9271          2.340  
+9272         41.060  
+
+[523 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2007 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+30                                          Afghanistan    2007  Total   
+84                                              Albania    2007  Total   
+138                                             Algeria    2007  Total   
+192                                             Andorra    2007  Total   
+246                                              Angola    2007  Total   
+280                                 Antigua and Barbuda    2007  Total   
+312                                           Argentina    2007  Total   
+354                                             Armenia    2007  Total   
+388                                           Australia    2007  Total   
+426                                             Austria    2007  Total   
+480                                          Azerbaijan    2007  Total   
+514                                             Bahamas    2007  Total   
+532                                             Bahrain    2007  Total   
+570                                          Bangladesh    2007  Total   
+604                                            Barbados    2007  Total   
+642                                             Belarus    2007  Total   
+696                                             Belgium    2007  Total   
+750                                              Belize    2007  Total   
+804                                               Benin    2007  Total   
+858                                              Bhutan    2007  Total   
+912                    Bolivia (Plurinational State of)    2007  Total   
+966                              Bosnia and Herzegovina    2007  Total   
+1020                                           Botswana    2007  Total   
+1074                                             Brazil    2007  Total   
+1106                                  Brunei Darussalam    2007  Total   
+1137                                           Bulgaria    2007  Total   
+1191                                       Burkina Faso    2007  Total   
+1245                                            Burundi    2007  Total   
+1299                                         Cabo Verde    2007  Total   
+1353                                           Cambodia    2007  Total   
+                                                ...     ...    ...   
+7828                                 Sudan (until 2011)    2007  Total   
+7882                                           Suriname    2007  Total   
+7936                                             Sweden    2007  Total   
+7990                                        Switzerland    2007  Total   
+8042                               Syrian Arab Republic    2007  Total   
+8096                                         Tajikistan    2007  Total   
+8150                                           Thailand    2007  Total   
+8204          The former Yugoslav Republic of Macedonia    2007  Total   
+8258                                        Timor-Leste    2007  Total   
+8306                                               Togo    2007  Total   
+8360                                              Tonga    2007  Total   
+8394                                Trinidad and Tobago    2007  Total   
+8432                                            Tunisia    2007  Total   
+8486                                             Turkey    2007  Total   
+8540                                       Turkmenistan    2007  Total   
+8594                                             Tuvalu    2007  Total   
+8645                                             Uganda    2007  Total   
+8699                                            Ukraine    2007  Total   
+8733                               United Arab Emirates    2007  Total   
+8771  United Kingdom of Great Britain and Northern I...    2007  Total   
+8825                        United Republic of Tanzania    2007  Total   
+8879                           United States of America    2007  Total   
+8933                                            Uruguay    2007  Total   
+8987                                         Uzbekistan    2007  Total   
+9041                                            Vanuatu    2007  Total   
+9075                 Venezuela (Bolivarian Republic of)    2007  Total   
+9108                                           Viet Nam    2007  Total   
+9162                                              Yemen    2007  Total   
+9216                                             Zambia    2007  Total   
+9270                                           Zimbabwe    2007  Total   
+
+      First Tooltip  
+30           20.940  
+84            0.530  
+138           3.420  
+192           0.000  
+246          32.960  
+280           0.760  
+312           1.640  
+354           0.040  
+388           0.000  
+426           0.000  
+480           0.210  
+514           0.710  
+532           0.000  
+570           9.650  
+604           0.770  
+642           0.000  
+696           0.000  
+750           2.960  
+804          61.760  
+858           5.700  
+912          24.600  
+966           0.210  
+1020         17.650  
+1074          5.390  
+1106          2.600  
+1137          0.000  
+1191         60.870  
+1245          2.720  
+1299         37.630  
+1353         63.040  
+            ...  
+7828         44.300  
+7882          6.090  
+7936          0.000  
+7990          0.000  
+8042          1.200  
+8096          0.720  
+8150          0.650  
+8204          0.280  
+8258         34.550  
+8306         54.340  
+8360          0.220  
+8394          0.190  
+8432          5.530  
+8486          0.440  
+8540          0.270  
+8594          4.300  
+8645         10.760  
+8699          0.013  
+8733          0.059  
+8771          0.000  
+8825         10.740  
+8879          0.000  
+8933          1.250  
+8987          0.050  
+9041          1.890  
+9075          6.760  
+9108         10.970  
+9162         25.730  
+9216         22.300  
+9270         28.000  
+
+[193 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2007 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+31                                          Afghanistan    2007  Urban   
+85                                              Albania    2007  Urban   
+139                                             Algeria    2007  Urban   
+193                                             Andorra    2007  Urban   
+247                                              Angola    2007  Urban   
+313                                           Argentina    2007  Urban   
+355                                             Armenia    2007  Urban   
+427                                             Austria    2007  Urban   
+481                                          Azerbaijan    2007  Urban   
+571                                          Bangladesh    2007  Urban   
+643                                             Belarus    2007  Urban   
+697                                             Belgium    2007  Urban   
+751                                              Belize    2007  Urban   
+805                                               Benin    2007  Urban   
+859                                              Bhutan    2007  Urban   
+913                    Bolivia (Plurinational State of)    2007  Urban   
+967                              Bosnia and Herzegovina    2007  Urban   
+1021                                           Botswana    2007  Urban   
+1075                                             Brazil    2007  Urban   
+1138                                           Bulgaria    2007  Urban   
+1192                                       Burkina Faso    2007  Urban   
+1246                                            Burundi    2007  Urban   
+1300                                         Cabo Verde    2007  Urban   
+1354                                           Cambodia    2007  Urban   
+1408                                           Cameroon    2007  Urban   
+1462                                             Canada    2007  Urban   
+1513                           Central African Republic    2007  Urban   
+1567                                               Chad    2007  Urban   
+1621                                              Chile    2007  Urban   
+1675                                              China    2007  Urban   
+                                                ...     ...    ...   
+7649                                       South Africa    2007  Urban   
+7724                                              Spain    2007  Urban   
+7778                                          Sri Lanka    2007  Urban   
+7829                                 Sudan (until 2011)    2007  Urban   
+7883                                           Suriname    2007  Urban   
+7937                                             Sweden    2007  Urban   
+7991                                        Switzerland    2007  Urban   
+8043                               Syrian Arab Republic    2007  Urban   
+8097                                         Tajikistan    2007  Urban   
+8151                                           Thailand    2007  Urban   
+8205          The former Yugoslav Republic of Macedonia    2007  Urban   
+8259                                        Timor-Leste    2007  Urban   
+8307                                               Togo    2007  Urban   
+8361                                              Tonga    2007  Urban   
+8433                                            Tunisia    2007  Urban   
+8487                                             Turkey    2007  Urban   
+8541                                       Turkmenistan    2007  Urban   
+8595                                             Tuvalu    2007  Urban   
+8646                                             Uganda    2007  Urban   
+8700                                            Ukraine    2007  Urban   
+8772  United Kingdom of Great Britain and Northern I...    2007  Urban   
+8826                        United Republic of Tanzania    2007  Urban   
+8880                           United States of America    2007  Urban   
+8934                                            Uruguay    2007  Urban   
+8988                                         Uzbekistan    2007  Urban   
+9042                                            Vanuatu    2007  Urban   
+9109                                           Viet Nam    2007  Urban   
+9163                                              Yemen    2007  Urban   
+9217                                             Zambia    2007  Urban   
+9271                                           Zimbabwe    2007  Urban   
+
+      First Tooltip  
+31            4.120  
+85            0.260  
+139           0.490  
+193           0.000  
+247          11.640  
+313           0.990  
+355           0.063  
+427           0.000  
+481           0.140  
+571           2.950  
+643           0.000  
+697           0.000  
+751           1.050  
+805          34.180  
+859           2.570  
+913           9.650  
+967           0.130  
+1021          2.700  
+1075          1.840  
+1138          0.000  
+1192          8.440  
+1246          1.450  
+1300         25.020  
+1354         23.720  
+1408          1.080  
+1462          0.000  
+1513          5.250  
+1567         17.500  
+1621          1.260  
+1675          0.200  
+            ...  
+7649          1.870  
+7724          0.000  
+7778          1.720  
+7829         18.350  
+7883          0.160  
+7937          0.000  
+7991          0.000  
+8043          0.170  
+8097          0.360  
+8151          0.000  
+8205          0.000  
+8259         13.100  
+8307         19.350  
+8361          0.100  
+8433          0.300  
+8487          0.110  
+8541          0.000  
+8595          1.500  
+8646          2.000  
+8700          0.000  
+8772          0.000  
+8826          2.180  
+8880          0.000  
+8934          1.080  
+8988          0.000  
+9042          0.300  
+9109          3.450  
+9163          3.180  
+9217          2.810  
+9271          2.340  
+
+[167 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2007 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+32                                          Afghanistan    2007  Rural   
+86                                              Albania    2007  Rural   
+140                                             Algeria    2007  Rural   
+194                                             Andorra    2007  Rural   
+248                                              Angola    2007  Rural   
+314                                           Argentina    2007  Rural   
+356                                             Armenia    2007  Rural   
+428                                             Austria    2007  Rural   
+482                                          Azerbaijan    2007  Rural   
+572                                          Bangladesh    2007  Rural   
+644                                             Belarus    2007  Rural   
+698                                             Belgium    2007  Rural   
+752                                              Belize    2007  Rural   
+806                                               Benin    2007  Rural   
+860                                              Bhutan    2007  Rural   
+914                    Bolivia (Plurinational State of)    2007  Rural   
+968                              Bosnia and Herzegovina    2007  Rural   
+1022                                           Botswana    2007  Rural   
+1076                                             Brazil    2007  Rural   
+1139                                           Bulgaria    2007  Rural   
+1193                                       Burkina Faso    2007  Rural   
+1247                                            Burundi    2007  Rural   
+1301                                         Cabo Verde    2007  Rural   
+1355                                           Cambodia    2007  Rural   
+1409                                           Cameroon    2007  Rural   
+1463                                             Canada    2007  Rural   
+1514                           Central African Republic    2007  Rural   
+1568                                               Chad    2007  Rural   
+1622                                              Chile    2007  Rural   
+1676                                              China    2007  Rural   
+                                                ...     ...    ...   
+7650                                       South Africa    2007  Rural   
+7725                                              Spain    2007  Rural   
+7779                                          Sri Lanka    2007  Rural   
+7830                                 Sudan (until 2011)    2007  Rural   
+7884                                           Suriname    2007  Rural   
+7938                                             Sweden    2007  Rural   
+7992                                        Switzerland    2007  Rural   
+8044                               Syrian Arab Republic    2007  Rural   
+8098                                         Tajikistan    2007  Rural   
+8152                                           Thailand    2007  Rural   
+8206          The former Yugoslav Republic of Macedonia    2007  Rural   
+8260                                        Timor-Leste    2007  Rural   
+8308                                               Togo    2007  Rural   
+8362                                              Tonga    2007  Rural   
+8434                                            Tunisia    2007  Rural   
+8488                                             Turkey    2007  Rural   
+8542                                       Turkmenistan    2007  Rural   
+8596                                             Tuvalu    2007  Rural   
+8647                                             Uganda    2007  Rural   
+8701                                            Ukraine    2007  Rural   
+8773  United Kingdom of Great Britain and Northern I...    2007  Rural   
+8827                        United Republic of Tanzania    2007  Rural   
+8881                           United States of America    2007  Rural   
+8935                                            Uruguay    2007  Rural   
+8989                                         Uzbekistan    2007  Rural   
+9043                                            Vanuatu    2007  Rural   
+9110                                           Viet Nam    2007  Rural   
+9164                                              Yemen    2007  Rural   
+9218                                             Zambia    2007  Rural   
+9272                                           Zimbabwe    2007  Rural   
+
+      First Tooltip  
+32           26.000  
+86            0.790  
+140           8.960  
+194           0.000  
+248          61.830  
+314           7.690  
+356           0.000  
+428           0.000  
+482           0.280  
+572          12.280  
+644           0.000  
+698           0.000  
+752           4.530  
+806          81.370  
+860           7.210  
+914          52.450  
+968           0.280  
+1022         38.230  
+1076         23.260  
+1139          0.000  
+1193         76.530  
+1247          2.860  
+1301         56.050  
+1355         72.510  
+1409         13.380  
+1463          0.000  
+1514         35.190  
+1568         83.900  
+1622          2.390  
+1676          2.780  
+            ...  
+7650         15.960  
+7725          0.000  
+7779          2.950  
+7830         57.000  
+7884         17.870  
+7938          0.000  
+7992          0.000  
+8044          2.430  
+8098          0.850  
+8152          1.070  
+8206          0.660  
+8260         42.370  
+8308         74.130  
+8362          0.260  
+8434         15.590  
+8488          1.150  
+8542          0.510  
+8596          7.300  
+8647         12.670  
+8701          0.042  
+8773          0.000  
+8827         13.770  
+8881          0.000  
+8935          3.800  
+8989          0.100  
+9043          2.380  
+9110         13.970  
+9164         35.420  
+9218         34.180  
+9272         41.060  
+
+[163 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182 183 184 185 186 187 188 189 190 191 192]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162]
