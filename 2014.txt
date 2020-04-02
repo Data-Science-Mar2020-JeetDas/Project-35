@@ -1,0 +1,613 @@
+#******************* Question - : 2014 :  ********************
+
+
+df2014 = df[df.Period == 2014]
+print("\n\n--------------[ OUTPUT for 2014 ]----------------------\n\n")
+print(df2014[['Location','Period','Dim1','First Tooltip']])
+
+df2014_total = df2014[df2014.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2014 Total ]----------------------\n\n")
+print(df2014_total[['Location','Period','Dim1','First Tooltip']])
+
+df2014_urban = df2014[df2014.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2014 Urban ]----------------------\n\n")
+print(df2014_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2014_rural = df2014[df2014.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2014 Rural ]----------------------\n\n")
+print(df2014_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2014_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2014_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2014_rural['Location']))
+print(i2)
+
+#--------------- plot for 2014 ----------------------
+
+plt.title('Question - : 2014')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2014_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2014_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2014_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2014 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+9                                           Afghanistan    2014  Total   
+10                                          Afghanistan    2014  Urban   
+11                                          Afghanistan    2014  Rural   
+63                                              Albania    2014  Total   
+64                                              Albania    2014  Urban   
+65                                              Albania    2014  Rural   
+117                                             Algeria    2014  Total   
+118                                             Algeria    2014  Urban   
+119                                             Algeria    2014  Rural   
+171                                             Andorra    2014  Total   
+172                                             Andorra    2014  Urban   
+173                                             Andorra    2014  Rural   
+225                                              Angola    2014  Total   
+226                                              Angola    2014  Urban   
+227                                              Angola    2014  Rural   
+273                                 Antigua and Barbuda    2014  Total   
+291                                           Argentina    2014  Total   
+292                                           Argentina    2014  Urban   
+293                                           Argentina    2014  Rural   
+333                                             Armenia    2014  Total   
+334                                             Armenia    2014  Urban   
+335                                             Armenia    2014  Rural   
+381                                           Australia    2014  Total   
+405                                             Austria    2014  Total   
+406                                             Austria    2014  Urban   
+407                                             Austria    2014  Rural   
+459                                          Azerbaijan    2014  Total   
+460                                          Azerbaijan    2014  Urban   
+461                                          Azerbaijan    2014  Rural   
+507                                             Bahamas    2014  Total   
+                                                ...     ...    ...   
+8751  United Kingdom of Great Britain and Northern I...    2014  Urban   
+8752  United Kingdom of Great Britain and Northern I...    2014  Rural   
+8804                        United Republic of Tanzania    2014  Total   
+8805                        United Republic of Tanzania    2014  Urban   
+8806                        United Republic of Tanzania    2014  Rural   
+8858                           United States of America    2014  Total   
+8859                           United States of America    2014  Urban   
+8860                           United States of America    2014  Rural   
+8912                                            Uruguay    2014  Total   
+8913                                            Uruguay    2014  Urban   
+8914                                            Uruguay    2014  Rural   
+8966                                         Uzbekistan    2014  Total   
+8967                                         Uzbekistan    2014  Urban   
+8968                                         Uzbekistan    2014  Rural   
+9020                                            Vanuatu    2014  Total   
+9021                                            Vanuatu    2014  Urban   
+9022                                            Vanuatu    2014  Rural   
+9068                 Venezuela (Bolivarian Republic of)    2014  Total   
+9087                                           Viet Nam    2014  Total   
+9088                                           Viet Nam    2014  Urban   
+9089                                           Viet Nam    2014  Rural   
+9141                                              Yemen    2014  Total   
+9142                                              Yemen    2014  Urban   
+9143                                              Yemen    2014  Rural   
+9195                                             Zambia    2014  Total   
+9196                                             Zambia    2014  Urban   
+9197                                             Zambia    2014  Rural   
+9249                                           Zimbabwe    2014  Total   
+9250                                           Zimbabwe    2014  Urban   
+9251                                           Zimbabwe    2014  Rural   
+
+      First Tooltip  
+9            15.020  
+10            0.590  
+11           19.730  
+63            0.000  
+64            0.000  
+65            0.000  
+117           1.090  
+118           0.230  
+119           3.110  
+171           0.000  
+172           0.000  
+173           0.000  
+225          23.840  
+226           4.170  
+227          56.950  
+273           0.260  
+291           2.170  
+292           1.640  
+293           7.690  
+333           0.002  
+334           0.003  
+335           0.000  
+381           0.000  
+405           0.000  
+406           0.000  
+407           0.000  
+459           0.270  
+460           0.200  
+461           0.350  
+507           0.280  
+            ...  
+8751          0.000  
+8752          0.000  
+8804         11.510  
+8805          1.850  
+8806         15.830  
+8858          0.000  
+8859          0.000  
+8860          0.000  
+8912          0.640  
+8913          0.610  
+8914          1.210  
+8966          0.000  
+8967          0.000  
+8968          0.000  
+9020          0.940  
+9021          0.400  
+9022          1.120  
+9068          4.160  
+9087          4.700  
+9088          1.810  
+9089          6.120  
+9141         20.650  
+9142          1.300  
+9143         30.690  
+9195         20.080  
+9196          2.770  
+9197         32.310  
+9249         25.930  
+9250          0.780  
+9251         38.030  
+
+[522 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2014 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+9                                           Afghanistan    2014  Total   
+63                                              Albania    2014  Total   
+117                                             Algeria    2014  Total   
+171                                             Andorra    2014  Total   
+225                                              Angola    2014  Total   
+273                                 Antigua and Barbuda    2014  Total   
+291                                           Argentina    2014  Total   
+333                                             Armenia    2014  Total   
+381                                           Australia    2014  Total   
+405                                             Austria    2014  Total   
+459                                          Azerbaijan    2014  Total   
+507                                             Bahamas    2014  Total   
+525                                             Bahrain    2014  Total   
+549                                          Bangladesh    2014  Total   
+597                                            Barbados    2014  Total   
+621                                             Belarus    2014  Total   
+675                                             Belgium    2014  Total   
+729                                              Belize    2014  Total   
+783                                               Benin    2014  Total   
+837                                              Bhutan    2014  Total   
+891                    Bolivia (Plurinational State of)    2014  Total   
+945                              Bosnia and Herzegovina    2014  Total   
+999                                            Botswana    2014  Total   
+1053                                             Brazil    2014  Total   
+1099                                  Brunei Darussalam    2014  Total   
+1116                                           Bulgaria    2014  Total   
+1170                                       Burkina Faso    2014  Total   
+1224                                            Burundi    2014  Total   
+1278                                         Cabo Verde    2014  Total   
+1332                                           Cambodia    2014  Total   
+                                                ...     ...    ...   
+7807                                              Sudan    2014  Total   
+7861                                           Suriname    2014  Total   
+7915                                             Sweden    2014  Total   
+7969                                        Switzerland    2014  Total   
+8021                               Syrian Arab Republic    2014  Total   
+8075                                         Tajikistan    2014  Total   
+8129                                           Thailand    2014  Total   
+8183          The former Yugoslav Republic of Macedonia    2014  Total   
+8237                                        Timor-Leste    2014  Total   
+8285                                               Togo    2014  Total   
+8339                                              Tonga    2014  Total   
+8387                                Trinidad and Tobago    2014  Total   
+8411                                            Tunisia    2014  Total   
+8465                                             Turkey    2014  Total   
+8519                                       Turkmenistan    2014  Total   
+8573                                             Tuvalu    2014  Total   
+8624                                             Uganda    2014  Total   
+8678                                            Ukraine    2014  Total   
+8726                               United Arab Emirates    2014  Total   
+8750  United Kingdom of Great Britain and Northern I...    2014  Total   
+8804                        United Republic of Tanzania    2014  Total   
+8858                           United States of America    2014  Total   
+8912                                            Uruguay    2014  Total   
+8966                                         Uzbekistan    2014  Total   
+9020                                            Vanuatu    2014  Total   
+9068                 Venezuela (Bolivarian Republic of)    2014  Total   
+9087                                           Viet Nam    2014  Total   
+9141                                              Yemen    2014  Total   
+9195                                             Zambia    2014  Total   
+9249                                           Zimbabwe    2014  Total   
+
+      First Tooltip  
+9            15.020  
+63            0.000  
+117           1.090  
+171           0.000  
+225          23.840  
+273           0.260  
+291           2.170  
+333           0.002  
+381           0.000  
+405           0.000  
+459           0.270  
+507           0.280  
+525           0.000  
+549           2.250  
+597           0.830  
+621           0.000  
+675           0.000  
+729           1.440  
+783          55.790  
+837           1.120  
+891          16.570  
+945           0.000  
+999          12.630  
+1053          2.310  
+1099          2.600  
+1116          0.000  
+1170         50.820  
+1224          2.660  
+1278         25.300  
+1332         40.860  
+            ...  
+7807         28.870  
+7861          3.820  
+7915          0.000  
+7969          0.000  
+8021          0.700  
+8075          0.066  
+8129          0.000  
+8183          0.690  
+8237         23.960  
+8285         49.770  
+8339          0.000  
+8387          0.074  
+8411          0.900  
+8465          0.330  
+8519          0.075  
+8573          7.120  
+8624          7.100  
+8678          0.001  
+8726          0.059  
+8750          0.000  
+8804         11.510  
+8858          0.000  
+8912          0.640  
+8966          0.000  
+9020          0.940  
+9068          4.160  
+9087          4.700  
+9141         20.650  
+9195         20.080  
+9249         25.930  
+
+[191 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2014 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+10                                          Afghanistan    2014  Urban   
+64                                              Albania    2014  Urban   
+118                                             Algeria    2014  Urban   
+172                                             Andorra    2014  Urban   
+226                                              Angola    2014  Urban   
+292                                           Argentina    2014  Urban   
+334                                             Armenia    2014  Urban   
+406                                             Austria    2014  Urban   
+460                                          Azerbaijan    2014  Urban   
+550                                          Bangladesh    2014  Urban   
+622                                             Belarus    2014  Urban   
+676                                             Belgium    2014  Urban   
+730                                              Belize    2014  Urban   
+784                                               Benin    2014  Urban   
+838                                              Bhutan    2014  Urban   
+892                    Bolivia (Plurinational State of)    2014  Urban   
+946                              Bosnia and Herzegovina    2014  Urban   
+1000                                           Botswana    2014  Urban   
+1054                                             Brazil    2014  Urban   
+1117                                           Bulgaria    2014  Urban   
+1171                                       Burkina Faso    2014  Urban   
+1225                                            Burundi    2014  Urban   
+1279                                         Cabo Verde    2014  Urban   
+1333                                           Cambodia    2014  Urban   
+1387                                           Cameroon    2014  Urban   
+1441                                             Canada    2014  Urban   
+1492                           Central African Republic    2014  Urban   
+1546                                               Chad    2014  Urban   
+1600                                              Chile    2014  Urban   
+1654                                              China    2014  Urban   
+                                                ...     ...    ...   
+7682                                        South Sudan    2014  Urban   
+7703                                              Spain    2014  Urban   
+7757                                          Sri Lanka    2014  Urban   
+7808                                              Sudan    2014  Urban   
+7862                                           Suriname    2014  Urban   
+7916                                             Sweden    2014  Urban   
+7970                                        Switzerland    2014  Urban   
+8022                               Syrian Arab Republic    2014  Urban   
+8076                                         Tajikistan    2014  Urban   
+8130                                           Thailand    2014  Urban   
+8184          The former Yugoslav Republic of Macedonia    2014  Urban   
+8238                                        Timor-Leste    2014  Urban   
+8286                                               Togo    2014  Urban   
+8340                                              Tonga    2014  Urban   
+8412                                            Tunisia    2014  Urban   
+8466                                             Turkey    2014  Urban   
+8520                                       Turkmenistan    2014  Urban   
+8574                                             Tuvalu    2014  Urban   
+8625                                             Uganda    2014  Urban   
+8679                                            Ukraine    2014  Urban   
+8751  United Kingdom of Great Britain and Northern I...    2014  Urban   
+8805                        United Republic of Tanzania    2014  Urban   
+8859                           United States of America    2014  Urban   
+8913                                            Uruguay    2014  Urban   
+8967                                         Uzbekistan    2014  Urban   
+9021                                            Vanuatu    2014  Urban   
+9088                                           Viet Nam    2014  Urban   
+9142                                              Yemen    2014  Urban   
+9196                                             Zambia    2014  Urban   
+9250                                           Zimbabwe    2014  Urban   
+
+      First Tooltip  
+10            0.590  
+64            0.000  
+118           0.230  
+172           0.000  
+226           4.170  
+292           1.640  
+334           0.003  
+406           0.000  
+460           0.200  
+550           0.710  
+622           0.000  
+676           0.000  
+730           0.840  
+784          30.360  
+838           0.410  
+892           4.320  
+946           0.000  
+1000          1.650  
+1054          0.670  
+1117          0.000  
+1171          7.650  
+1225          0.880  
+1279         16.100  
+1333          5.890  
+1387          1.260  
+1441          0.000  
+1492          6.490  
+1546         16.730  
+1600          0.000  
+1654          0.100  
+            ...  
+7682         26.380  
+7703          0.000  
+7757          0.310  
+7808          5.370  
+7862          0.290  
+7916          0.000  
+7970          0.000  
+8022          0.000  
+8076          0.000  
+8130          0.000  
+8184          0.000  
+8238          3.730  
+8286         14.780  
+8340          0.000  
+8412          0.023  
+8466          0.000  
+8520          0.000  
+8574          5.840  
+8625          2.020  
+8679          0.000  
+8751          0.000  
+8805          1.850  
+8859          0.000  
+8913          0.610  
+8967          0.000  
+9021          0.400  
+9088          1.810  
+9142          1.300  
+9196          2.770  
+9250          0.780  
+
+[168 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2014 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+11                                          Afghanistan    2014  Rural   
+65                                              Albania    2014  Rural   
+119                                             Algeria    2014  Rural   
+173                                             Andorra    2014  Rural   
+227                                              Angola    2014  Rural   
+293                                           Argentina    2014  Rural   
+335                                             Armenia    2014  Rural   
+407                                             Austria    2014  Rural   
+461                                          Azerbaijan    2014  Rural   
+551                                          Bangladesh    2014  Rural   
+623                                             Belarus    2014  Rural   
+677                                             Belgium    2014  Rural   
+731                                              Belize    2014  Rural   
+785                                               Benin    2014  Rural   
+839                                              Bhutan    2014  Rural   
+893                    Bolivia (Plurinational State of)    2014  Rural   
+947                              Bosnia and Herzegovina    2014  Rural   
+1001                                           Botswana    2014  Rural   
+1055                                             Brazil    2014  Rural   
+1118                                           Bulgaria    2014  Rural   
+1172                                       Burkina Faso    2014  Rural   
+1226                                            Burundi    2014  Rural   
+1280                                         Cabo Verde    2014  Rural   
+1334                                           Cambodia    2014  Rural   
+1388                                           Cameroon    2014  Rural   
+1442                                             Canada    2014  Rural   
+1493                           Central African Republic    2014  Rural   
+1547                                               Chad    2014  Rural   
+1601                                              Chile    2014  Rural   
+1655                                              China    2014  Rural   
+                                                ...     ...    ...   
+7683                                        South Sudan    2014  Rural   
+7704                                              Spain    2014  Rural   
+7758                                          Sri Lanka    2014  Rural   
+7809                                              Sudan    2014  Rural   
+7863                                           Suriname    2014  Rural   
+7917                                             Sweden    2014  Rural   
+7971                                        Switzerland    2014  Rural   
+8023                               Syrian Arab Republic    2014  Rural   
+8077                                         Tajikistan    2014  Rural   
+8131                                           Thailand    2014  Rural   
+8185          The former Yugoslav Republic of Macedonia    2014  Rural   
+8239                                        Timor-Leste    2014  Rural   
+8287                                               Togo    2014  Rural   
+8341                                              Tonga    2014  Rural   
+8413                                            Tunisia    2014  Rural   
+8467                                             Turkey    2014  Rural   
+8521                                       Turkmenistan    2014  Rural   
+8575                                             Tuvalu    2014  Rural   
+8626                                             Uganda    2014  Rural   
+8680                                            Ukraine    2014  Rural   
+8752  United Kingdom of Great Britain and Northern I...    2014  Rural   
+8806                        United Republic of Tanzania    2014  Rural   
+8860                           United States of America    2014  Rural   
+8914                                            Uruguay    2014  Rural   
+8968                                         Uzbekistan    2014  Rural   
+9022                                            Vanuatu    2014  Rural   
+9089                                           Viet Nam    2014  Rural   
+9143                                              Yemen    2014  Rural   
+9197                                             Zambia    2014  Rural   
+9251                                           Zimbabwe    2014  Rural   
+
+      First Tooltip  
+11           19.730  
+65            0.000  
+119           3.110  
+173           0.000  
+227          56.950  
+293           7.690  
+335           0.000  
+407           0.000  
+461           0.350  
+551           3.030  
+623           0.000  
+677           0.000  
+731           1.930  
+785          76.740  
+839           1.560  
+893          42.670  
+947           0.000  
+1001         34.300  
+1055         12.010  
+1118          0.000  
+1172         66.730  
+1226          2.900  
+1280         41.520  
+1334         50.610  
+1388         13.910  
+1442          0.000  
+1493         35.560  
+1547         82.560  
+1601          1.340  
+1655          1.150  
+            ...  
+7683         76.390  
+7704          0.000  
+7758          1.360  
+7809         40.800  
+7863         10.680  
+7917          0.000  
+7971          0.000  
+8023          1.430  
+8077          0.090  
+8131          0.000  
+8185          1.620  
+8239         32.280  
+8287         72.690  
+8341          0.000  
+8413          2.750  
+8467          1.240  
+8521          0.150  
+8575          8.960  
+8626          8.500  
+8680          0.004  
+8752          0.000  
+8806         15.830  
+8860          0.000  
+8914          1.210  
+8968          0.000  
+9022          1.120  
+9089          6.120  
+9143         30.690  
+9197         32.310  
+9251         38.030  
+
+[163 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182 183 184 185 186 187 188 189 190]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162]
