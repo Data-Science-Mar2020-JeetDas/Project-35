@@ -1,0 +1,613 @@
+#******************* Question - : 2005 :  ********************
+
+
+df2005 = df[df.Period == 2005]
+print("\n\n--------------[ OUTPUT for 2005 ]----------------------\n\n")
+print(df2005[['Location','Period','Dim1','First Tooltip']])
+
+df2005_total = df2005[df2005.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2005 Total ]----------------------\n\n")
+print(df2005_total[['Location','Period','Dim1','First Tooltip']])
+
+df2005_urban = df2005[df2005.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2005 Urban ]----------------------\n\n")
+print(df2005_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2005_rural = df2005[df2005.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2005 Rural ]----------------------\n\n")
+print(df2005_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2005_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2005_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2005_rural['Location']))
+print(i2)
+
+#--------------- plot for 2005 ----------------------
+
+plt.title('Question - : 2005')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2005_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2005_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2005_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2005 ]----------------------
+
+
+                                               Location  Period   Dim1  \
+36                                          Afghanistan    2005  Total   
+37                                          Afghanistan    2005  Urban   
+38                                          Afghanistan    2005  Rural   
+90                                              Albania    2005  Total   
+91                                              Albania    2005  Urban   
+92                                              Albania    2005  Rural   
+144                                             Algeria    2005  Total   
+145                                             Algeria    2005  Urban   
+146                                             Algeria    2005  Rural   
+198                                             Andorra    2005  Total   
+199                                             Andorra    2005  Urban   
+200                                             Andorra    2005  Rural   
+252                                              Angola    2005  Total   
+253                                              Angola    2005  Urban   
+254                                              Angola    2005  Rural   
+282                                 Antigua and Barbuda    2005  Total   
+318                                           Argentina    2005  Urban   
+360                                             Armenia    2005  Total   
+361                                             Armenia    2005  Urban   
+362                                             Armenia    2005  Rural   
+390                                           Australia    2005  Total   
+432                                             Austria    2005  Total   
+433                                             Austria    2005  Urban   
+434                                             Austria    2005  Rural   
+486                                          Azerbaijan    2005  Total   
+487                                          Azerbaijan    2005  Urban   
+488                                          Azerbaijan    2005  Rural   
+516                                             Bahamas    2005  Total   
+534                                             Bahrain    2005  Total   
+576                                          Bangladesh    2005  Total   
+                                                ...     ...    ...   
+8778  United Kingdom of Great Britain and Northern I...    2005  Urban   
+8779  United Kingdom of Great Britain and Northern I...    2005  Rural   
+8831                        United Republic of Tanzania    2005  Total   
+8832                        United Republic of Tanzania    2005  Urban   
+8833                        United Republic of Tanzania    2005  Rural   
+8885                           United States of America    2005  Total   
+8886                           United States of America    2005  Urban   
+8887                           United States of America    2005  Rural   
+8939                                            Uruguay    2005  Total   
+8940                                            Uruguay    2005  Urban   
+8941                                            Uruguay    2005  Rural   
+8993                                         Uzbekistan    2005  Total   
+8994                                         Uzbekistan    2005  Urban   
+8995                                         Uzbekistan    2005  Rural   
+9047                                            Vanuatu    2005  Total   
+9048                                            Vanuatu    2005  Urban   
+9049                                            Vanuatu    2005  Rural   
+9077                 Venezuela (Bolivarian Republic of)    2005  Total   
+9114                                           Viet Nam    2005  Total   
+9115                                           Viet Nam    2005  Urban   
+9116                                           Viet Nam    2005  Rural   
+9168                                              Yemen    2005  Total   
+9169                                              Yemen    2005  Urban   
+9170                                              Yemen    2005  Rural   
+9222                                             Zambia    2005  Total   
+9223                                             Zambia    2005  Urban   
+9224                                             Zambia    2005  Rural   
+9276                                           Zimbabwe    2005  Total   
+9277                                           Zimbabwe    2005  Urban   
+9278                                           Zimbabwe    2005  Rural   
+
+      First Tooltip  
+36           22.640  
+37            5.120  
+38           27.790  
+90            0.620  
+91            0.320  
+92            0.890  
+144           4.200  
+145           0.560  
+146          10.630  
+198           0.000  
+199           0.000  
+200           0.000  
+252          35.530  
+253          13.770  
+254          63.230  
+282           0.930  
+318           0.800  
+360           0.051  
+361           0.080  
+362           0.000  
+390           0.000  
+432           0.000  
+433           0.000  
+434           0.000  
+486           0.190  
+487           0.130  
+488           0.260  
+516           0.830  
+534           0.000  
+576          11.890  
+            ...  
+8778          0.000  
+8779          0.000  
+8831         10.470  
+8832          2.270  
+8833         13.190  
+8885          0.000  
+8886          0.000  
+8887          0.000  
+8939          1.430  
+8940          1.210  
+8941          4.540  
+8993          0.051  
+8994          0.000  
+8995          0.100  
+9047          2.170  
+9048          0.270  
+9049          2.740  
+9077          7.460  
+9114         12.850  
+9115          3.920  
+9116         16.210  
+9168         27.210  
+9169          3.720  
+9170         36.770  
+9222         22.950  
+9223          2.830  
+9224         34.720  
+9276         28.570  
+9277          2.790  
+9278         41.920  
+
+[514 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2005 Total ]----------------------
+
+
+                                               Location  Period   Dim1  \
+36                                          Afghanistan    2005  Total   
+90                                              Albania    2005  Total   
+144                                             Algeria    2005  Total   
+198                                             Andorra    2005  Total   
+252                                              Angola    2005  Total   
+282                                 Antigua and Barbuda    2005  Total   
+360                                             Armenia    2005  Total   
+390                                           Australia    2005  Total   
+432                                             Austria    2005  Total   
+486                                          Azerbaijan    2005  Total   
+516                                             Bahamas    2005  Total   
+534                                             Bahrain    2005  Total   
+576                                          Bangladesh    2005  Total   
+606                                            Barbados    2005  Total   
+648                                             Belarus    2005  Total   
+702                                             Belgium    2005  Total   
+756                                              Belize    2005  Total   
+810                                               Benin    2005  Total   
+864                                              Bhutan    2005  Total   
+918                    Bolivia (Plurinational State of)    2005  Total   
+972                              Bosnia and Herzegovina    2005  Total   
+1026                                           Botswana    2005  Total   
+1080                                             Brazil    2005  Total   
+1143                                           Bulgaria    2005  Total   
+1197                                       Burkina Faso    2005  Total   
+1251                                            Burundi    2005  Total   
+1305                                         Cabo Verde    2005  Total   
+1359                                           Cambodia    2005  Total   
+1413                                           Cameroon    2005  Total   
+1467                                             Canada    2005  Total   
+                                                ...     ...    ...   
+7834                                 Sudan (until 2011)    2005  Total   
+7888                                           Suriname    2005  Total   
+7942                                             Sweden    2005  Total   
+7996                                        Switzerland    2005  Total   
+8048                               Syrian Arab Republic    2005  Total   
+8102                                         Tajikistan    2005  Total   
+8156                                           Thailand    2005  Total   
+8210          The former Yugoslav Republic of Macedonia    2005  Total   
+8264                                        Timor-Leste    2005  Total   
+8312                                               Togo    2005  Total   
+8366                                              Tonga    2005  Total   
+8396                                Trinidad and Tobago    2005  Total   
+8438                                            Tunisia    2005  Total   
+8492                                             Turkey    2005  Total   
+8546                                       Turkmenistan    2005  Total   
+8600                                             Tuvalu    2005  Total   
+8651                                             Uganda    2005  Total   
+8705                                            Ukraine    2005  Total   
+8735                               United Arab Emirates    2005  Total   
+8777  United Kingdom of Great Britain and Northern I...    2005  Total   
+8831                        United Republic of Tanzania    2005  Total   
+8885                           United States of America    2005  Total   
+8939                                            Uruguay    2005  Total   
+8993                                         Uzbekistan    2005  Total   
+9047                                            Vanuatu    2005  Total   
+9077                 Venezuela (Bolivarian Republic of)    2005  Total   
+9114                                           Viet Nam    2005  Total   
+9168                                              Yemen    2005  Total   
+9222                                             Zambia    2005  Total   
+9276                                           Zimbabwe    2005  Total   
+
+      First Tooltip  
+36           22.640  
+90            0.620  
+144           4.200  
+198           0.000  
+252          35.530  
+282           0.930  
+360           0.051  
+390           0.000  
+432           0.000  
+486           0.190  
+516           0.830  
+534           0.000  
+576          11.890  
+606           0.750  
+648           0.000  
+702           0.000  
+756           3.390  
+810          63.470  
+864           7.080  
+918          26.970  
+972           0.340  
+1026         19.010  
+1080          6.350  
+1143          0.000  
+1197         64.110  
+1251          2.740  
+1305         41.380  
+1359         69.190  
+1413          7.310  
+1467          0.000  
+            ...  
+7834         48.660  
+7888          6.720  
+7942          0.000  
+7996          0.000  
+8048          1.360  
+8102          0.920  
+8156          0.880  
+8210          0.140  
+8264         37.570  
+8312         55.580  
+8366          0.280  
+8396          0.230  
+8438          6.940  
+8492          0.470  
+8546          0.320  
+8600          3.540  
+8651         11.850  
+8705          0.026  
+8735          0.059  
+8777          0.000  
+8831         10.470  
+8885          0.000  
+8939          1.430  
+8993          0.051  
+9047          2.170  
+9077          7.460  
+9114         12.850  
+9168         27.210  
+9222         22.950  
+9276         28.570  
+
+[188 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2005 Urban ]----------------------
+
+
+                                               Location  Period   Dim1  \
+37                                          Afghanistan    2005  Urban   
+91                                              Albania    2005  Urban   
+145                                             Algeria    2005  Urban   
+199                                             Andorra    2005  Urban   
+253                                              Angola    2005  Urban   
+318                                           Argentina    2005  Urban   
+361                                             Armenia    2005  Urban   
+433                                             Austria    2005  Urban   
+487                                          Azerbaijan    2005  Urban   
+577                                          Bangladesh    2005  Urban   
+649                                             Belarus    2005  Urban   
+703                                             Belgium    2005  Urban   
+757                                              Belize    2005  Urban   
+811                                               Benin    2005  Urban   
+865                                              Bhutan    2005  Urban   
+919                    Bolivia (Plurinational State of)    2005  Urban   
+973                              Bosnia and Herzegovina    2005  Urban   
+1027                                           Botswana    2005  Urban   
+1081                                             Brazil    2005  Urban   
+1144                                           Bulgaria    2005  Urban   
+1198                                       Burkina Faso    2005  Urban   
+1252                                            Burundi    2005  Urban   
+1306                                         Cabo Verde    2005  Urban   
+1360                                           Cambodia    2005  Urban   
+1414                                           Cameroon    2005  Urban   
+1468                                             Canada    2005  Urban   
+1519                           Central African Republic    2005  Urban   
+1573                                               Chad    2005  Urban   
+1627                                              Chile    2005  Urban   
+1681                                              China    2005  Urban   
+                                                ...     ...    ...   
+7655                                       South Africa    2005  Urban   
+7730                                              Spain    2005  Urban   
+7784                                          Sri Lanka    2005  Urban   
+7835                                 Sudan (until 2011)    2005  Urban   
+7889                                           Suriname    2005  Urban   
+7943                                             Sweden    2005  Urban   
+7997                                        Switzerland    2005  Urban   
+8049                               Syrian Arab Republic    2005  Urban   
+8103                                         Tajikistan    2005  Urban   
+8157                                           Thailand    2005  Urban   
+8211          The former Yugoslav Republic of Macedonia    2005  Urban   
+8265                                        Timor-Leste    2005  Urban   
+8313                                               Togo    2005  Urban   
+8367                                              Tonga    2005  Urban   
+8439                                            Tunisia    2005  Urban   
+8493                                             Turkey    2005  Urban   
+8547                                       Turkmenistan    2005  Urban   
+8601                                             Tuvalu    2005  Urban   
+8652                                             Uganda    2005  Urban   
+8706                                            Ukraine    2005  Urban   
+8778  United Kingdom of Great Britain and Northern I...    2005  Urban   
+8832                        United Republic of Tanzania    2005  Urban   
+8886                           United States of America    2005  Urban   
+8940                                            Uruguay    2005  Urban   
+8994                                         Uzbekistan    2005  Urban   
+9048                                            Vanuatu    2005  Urban   
+9115                                           Viet Nam    2005  Urban   
+9169                                              Yemen    2005  Urban   
+9223                                             Zambia    2005  Urban   
+9277                                           Zimbabwe    2005  Urban   
+
+      First Tooltip  
+37            5.120  
+91            0.320  
+145           0.560  
+199           0.000  
+253          13.770  
+318           0.800  
+361           0.080  
+433           0.000  
+487           0.130  
+577           3.600  
+649           0.000  
+703           0.000  
+757           1.110  
+811          35.270  
+865           3.190  
+919          11.180  
+973           0.200  
+1027          3.000  
+1081          2.170  
+1144          0.000  
+1198          8.670  
+1252          1.610  
+1306         27.570  
+1360         28.820  
+1414          1.030  
+1468          0.000  
+1519          4.760  
+1573         17.720  
+1627          1.520  
+1681          0.210  
+            ...  
+7655          2.110  
+7730          0.000  
+7784          2.130  
+7835         22.060  
+7889          0.120  
+7943          0.000  
+7997          0.000  
+8049          0.096  
+8103          0.510  
+8157          0.180  
+8211          0.000  
+8265         15.780  
+8313         20.650  
+8367          0.000  
+8439          0.380  
+8493          0.160  
+8547          0.000  
+8601          0.260  
+8652          1.990  
+8706          0.000  
+8778          0.000  
+8832          2.270  
+8886          0.000  
+8940          1.210  
+8994          0.000  
+9048          0.270  
+9115          3.920  
+9169          3.720  
+9223          2.830  
+9277          2.790  
+
+[165 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2005 Rural ]----------------------
+
+
+                                               Location  Period   Dim1  \
+38                                          Afghanistan    2005  Rural   
+92                                              Albania    2005  Rural   
+146                                             Algeria    2005  Rural   
+200                                             Andorra    2005  Rural   
+254                                              Angola    2005  Rural   
+362                                             Armenia    2005  Rural   
+434                                             Austria    2005  Rural   
+488                                          Azerbaijan    2005  Rural   
+578                                          Bangladesh    2005  Rural   
+650                                             Belarus    2005  Rural   
+704                                             Belgium    2005  Rural   
+758                                              Belize    2005  Rural   
+812                                               Benin    2005  Rural   
+866                                              Bhutan    2005  Rural   
+920                    Bolivia (Plurinational State of)    2005  Rural   
+974                              Bosnia and Herzegovina    2005  Rural   
+1028                                           Botswana    2005  Rural   
+1082                                             Brazil    2005  Rural   
+1145                                           Bulgaria    2005  Rural   
+1199                                       Burkina Faso    2005  Rural   
+1253                                            Burundi    2005  Rural   
+1307                                         Cabo Verde    2005  Rural   
+1361                                           Cambodia    2005  Rural   
+1415                                           Cameroon    2005  Rural   
+1469                                             Canada    2005  Rural   
+1520                           Central African Republic    2005  Rural   
+1574                                               Chad    2005  Rural   
+1628                                              Chile    2005  Rural   
+1682                                              China    2005  Rural   
+1736                                           Colombia    2005  Rural   
+                                                ...     ...    ...   
+7656                                       South Africa    2005  Rural   
+7731                                              Spain    2005  Rural   
+7785                                          Sri Lanka    2005  Rural   
+7836                                 Sudan (until 2011)    2005  Rural   
+7890                                           Suriname    2005  Rural   
+7944                                             Sweden    2005  Rural   
+7998                                        Switzerland    2005  Rural   
+8050                               Syrian Arab Republic    2005  Rural   
+8104                                         Tajikistan    2005  Rural   
+8158                                           Thailand    2005  Rural   
+8212          The former Yugoslav Republic of Macedonia    2005  Rural   
+8266                                        Timor-Leste    2005  Rural   
+8314                                               Togo    2005  Rural   
+8368                                              Tonga    2005  Rural   
+8440                                            Tunisia    2005  Rural   
+8494                                             Turkey    2005  Rural   
+8548                                       Turkmenistan    2005  Rural   
+8602                                             Tuvalu    2005  Rural   
+8653                                             Uganda    2005  Rural   
+8707                                            Ukraine    2005  Rural   
+8779  United Kingdom of Great Britain and Northern I...    2005  Rural   
+8833                        United Republic of Tanzania    2005  Rural   
+8887                           United States of America    2005  Rural   
+8941                                            Uruguay    2005  Rural   
+8995                                         Uzbekistan    2005  Rural   
+9049                                            Vanuatu    2005  Rural   
+9116                                           Viet Nam    2005  Rural   
+9170                                              Yemen    2005  Rural   
+9224                                             Zambia    2005  Rural   
+9278                                           Zimbabwe    2005  Rural   
+
+      First Tooltip  
+38           27.790  
+92            0.890  
+146          10.630  
+200           0.000  
+254          63.230  
+362           0.000  
+434           0.000  
+488           0.260  
+578          14.930  
+650           0.000  
+704           0.000  
+758           5.280  
+812          82.700  
+866           8.830  
+920          55.240  
+974           0.450  
+1028         39.350  
+1082         26.480  
+1145          0.000  
+1199         79.320  
+1253          2.850  
+1307         60.200  
+1361         78.770  
+1415         13.230  
+1469          0.000  
+1520         35.040  
+1574         84.290  
+1628          2.690  
+1682          3.250  
+1736         23.970  
+            ...  
+7656         18.560  
+7731          0.000  
+7785          3.400  
+7836         61.630  
+7890         19.920  
+7944          0.000  
+7998          0.000  
+8050          2.830  
+8104          1.070  
+8158          1.300  
+8212          0.340  
+8266         45.250  
+8314         74.540  
+8368          0.360  
+8440         19.250  
+8494          1.130  
+8548          0.610  
+8602          6.780  
+8653         13.860  
+8707          0.081  
+8779          0.000  
+8833         13.190  
+8887          0.000  
+8941          4.540  
+8995          0.100  
+9049          2.740  
+9116         16.210  
+9170         36.770  
+9224         34.720  
+9278         41.920  
+
+[161 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182 183 184 185 186 187]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160]
